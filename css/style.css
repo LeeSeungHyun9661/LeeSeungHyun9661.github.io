@@ -3,26 +3,32 @@ body {
   /* 생략 */
 }
 
+/*  각 세션 */
 .section {
     position: relative;
     height: 600px;
 }
+
 .section-About {
     position: relative;
     height: 600px;
 }
+
 .section-Experience {
     position: relative;
     height: 600px;
 }
+
 .section-Skill {
     position: relative;
     height: 600px;
 }
+
 .section-Project {
     position: relative;
     height: 600px;
 }
+
 .section-Posting {
     position: relative;
     height: 600px;
