@@ -3,16 +3,87 @@ body {
   /* 생략 */
 }
 
-/*  각 세션 */
+div{
+    border: 1px solid red;
+}
+
+/*  각 세션 설정 */
 .section {
     position: relative;
     height: 600px;
+    padding: 1rem;
+}
+/* 각 세션 제목 설정 */
+.title{
+    text-align:left;
 }
 
+/* 세션 - About */
 .section-About {
-    position: relative;
-    height: 600px;
+    height: auto;
+
+    .information{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        max-height: auto;
+
+        .profile-img img{
+            height: auto;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1px solid red;
+            aspect-ratio: 1 / 1;
+        } 
+        .profile-text{  
+            display: block; 
+            text-align:center;  
+            margin-left: 30px;
+            padding: 100px 0px;
+
+            .social-icons{
+                margin: 0 auto;
+                max-width: 130px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+        }
+
+
+
+    }  
+
+    @media ( max-width: 767px ) {
+        .information{
+            display: block;
+            position: relative;
+            height: auto;
+            text-align:center; 
+
+            .profile-img img{
+                width: 30%;
+                max-width: 40%;
+                height: auto;
+                object-fit: cover;
+                border-radius: 50%;
+                vertical-align: middle;
+                border: 1px solid red;
+                aspect-ratio: 1 / 1;
+            }
+
+            .profile-text{   
+                margin-left: 0px;
+                padding: 0px;
+            }
+        }   
+
+    }
+
+    
 }
+
+
 
 .section-Experience {
     position: relative;
@@ -33,3 +104,6 @@ body {
     position: relative;
     height: 600px;
 }
+
+
+
