@@ -50,3 +50,5 @@ $(window).resize(Page__updateOffsetTop);
 $(window).scroll(Page__updateIndicatorActive);
 
 // 참고 출처 : https://codepen.io/kimyangsun/pen/vYEqWee
+
+var coverflow = $("#coverflow").flipster();

@@ -1,109 +1,163 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap demo</title>
-
-        <!-- CSS -->
-        <link rel="stylesheet" href="css/style.css">
-        <!-- JQuery -->
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <!-- Bootstrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <!-- Bootstrap Icon -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-    </head>
-    <body>
-        <!-- 상단 메뉴바 -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Lee SeungHyun</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#section-About">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#section-Experience">Experience</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#section-Skill">Skill</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#section-Project">Project</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#section-Posting">Posting</a>
-                        </li>
-                    </ul>
-                    <span class="navbar-text">
-                        Hello World
-                    </span>
-                </div>
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>LeeSeungHyun.io</title>
+      <!-- CSS -->
+      <link rel="stylesheet" href="css/style.css" />
+      <!-- JQuery -->
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <!-- Bootstrap -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"/>
+      <!-- CSS / Bootstrap Icon -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"/>
+      <!-- CSS / flipster -->
+      <link rel="stylesheet" href="css/jquery.flipster.min.css">
+      <!-- JS / flipster -->
+      <script src="js/jquery.flipster.min.js"></script>
+   </head>
+   <body>
+      <!-- 상단 메뉴바 -->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+         <div class="container-fluid">
+            <a class="navbar-brand" href="#">LeeSeungHyun.io</a>
+            <button
+               class="navbar-toggler"
+               type="button"
+               data-bs-toggle="collapse"
+               data-bs-target="#navbarText"
+               aria-controls="navbarText"
+               aria-expanded="false"
+               aria-label="Toggle navigation"
+            >
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                     <a class="nav-link" href="#section-About">About</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#section-Experience"
+                        >Experience</a
+                     >
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#section-Skill">Skill</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#section-Project">Project</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#section-Posting">Posting</a>
+                  </li>
+               </ul>
+               <span class="navbar-text"> Hello World </span>
             </div>
-        </nav>
+         </div>
+      </nav>
 
-        <div class="sections">
-            <div class="section section-About" id="section-About">                
-                <hr>
-                <h1 class ="title">About</h1>
+      <!-- 세션 -->
+      <div class="sections">
+         <!-- 세션 : About -->
+         <div class="section section-About" id="section-About">
+            <hr />
+            <h1 class="title">About</h1>
+            <div class="information">
+               <div class="profile-img">
+                  <img src="assets/img/profile.png" />
+               </div>
+               <div class="profile-text">
+                  <h3>이승현</h3>
+                  <div>
+                     <p>언제나 긍정적이고 호기심 많은 백엔드 개발자입니다.</p>
+                  </div>
+                  <div>
+                     <i class="bi bi-telephone-fill"> 010-7335-1663</i>
+                  </div>
+                  <div>
+                     <i class="bi bi-house-fill">경상북도 경산시 경안로 69길 12</i>
+                  </div>
 
-                <div class="information">
-                    <div class="profile-img">
-                        <img src="assets/img/profile.png">
-                    </div>
+                  <div class="social-icons">
+                     <i class="bi bi-github" href=""></i>
+                     <i class="bi bi-instagram" href=""></i>
+                     <i class="bi bi-google" href=""></i>
+                     <i class="bi bi-whatsapp" href=""></i>
+                     <i class="bi bi-vimeo" href=""></i>
+                  </div>
+               </div>
+            </div>
+         </div>
 
-                    <div class="profile-text">
-                        <h3>이승현</h3>
-                        <div>
-                            <p>언제나 긍정적이고 호기심 많은 백엔드 개발자입니다.</p>
-                        </div>                
-                        <div>
-                            <i class="bi bi-telephone-fill"> 010-7335-1663</i>
+         <!-- 세션 : Experience -->
+         <div class="section section-Experience" id="section-Experience">
+            <hr />
+            <h1 class="title">Experience</h1>
+         </div>
+
+         <div class="section section-Skill" id="section-Skill">
+            <hr />
+            <h2>Skill</h2>
+         </div>
+
+         <!-- 세션 : Project -->
+         <div class="section section-Project" id="section-Project">
+            <hr />
+            <h2>Project</h2>
+
+            <!-- 세션 : Project / flipster 이미지-->
+            <div id="coverflow">
+                <ul class="flip-items">
+                     <!-- Project : Django -->
+                     <li>
+                        <div class="card">
+                           <img src="assets/img/on-work.png" class="card-img-top" alt="...">
+                           <div class="card-body">
+                              <h5 class="card-title">Django Books</h5>
+                              <p class="card-text">Python Django</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                           </div>
                         </div>
-                        <div>
-                            <i class="bi bi-house-fill"> 경상북도 경산시 경안로 69길 12</i>
-                        </div>                       
-                        
-                        <div class="social-icons">
-                            <i class="bi bi-github" href=""></i>
-                            <i class="bi bi-instagram" href=""></i>
-                            <i class="bi bi-google" href=""></i>
-                            <i class="bi bi-whatsapp" href=""></i>
-                            <i class="bi bi-vimeo" href=""></i>  
+                     </li>
+                     <!-- Project : JSP -->
+                     <li>
+                        <div class="card">
+                            <img src="assets/img/on-work.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Java Coffees</h5>
+                                <p class="card-text">Java JSP</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                
+                     </li>
+                     <!-- Project : onWorking -->
+                     <li>
+                        <div class="card">
+                            <img src="assets/img/on-work.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">on Work</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                     </li>
+                </ul>
             </div>
+         </div>
 
-            <div class="section section-Experience" id="section-Experience">               
-                <hr>
-                <h1 class ="title">Experience</h1>
-            </div>
+         <!-- 세션 : Posting -->
+         <div class="section section-Posting" id="section-Posting">
+            <hr />
+            <h2>Posting</h2>
+         </div>
+      </div>
 
-            <div class="section section-Skill" id="section-Skill">               
-                <hr>
-                <h2>Skill</h2>
-            </div>
+      <!-- JS / Custom -->
+      <script type="text/javascript" src="js/script.js"></script>
+      <!-- JS / bootstrap -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
-            <div class="section section-Project" id="section-Project">               
-                <hr>
-                <h2>Project</h2>
-            </div>
-
-            <div class="section section-Posting" id="section-Posting">               
-                <hr>
-                <h2>Posting</h2>
-            </div>
-        </div>
-
-        <script type="text/javascript" src="js/script.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-
-    </body>
+   </body>
 </html>

@@ -43,14 +43,17 @@ div{
 
             .social-icons{
                 margin: 0 auto;
-                max-width: 130px;
+                max-width: 70%;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
+
+                .bi{
+                    font-size: 22px;
+                    line-height: 22px;
+                }
             }
         }
-
-
 
     }  
 
@@ -75,12 +78,22 @@ div{
             .profile-text{   
                 margin-left: 0px;
                 padding: 0px;
+
+                .social-icons{
+                    margin: 0 auto;
+                    max-width: 40%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+
+                    .bi{
+                        font-size: 15px;
+                        line-height: 15px;
+                    }
+                }
             }
-        }   
-
-    }
-
-    
+        }  
+    }    
 }
 
 
@@ -97,7 +110,46 @@ div{
 
 .section-Project {
     position: relative;
-    height: 600px;
+    height: auto; 
+
+    .card{
+        flex-direction: row;
+        width: 30rem;
+    }
+    
+    .card .card-body{
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        width :inherit;
+        padding: 10px;
+        .card-title{
+            margin-bottom: 3px;
+        }
+        .card-text{
+            margin-bottom: 3px;
+        }
+    }
+
+    .card img{
+            width: 40rem;
+    }
+    @media ( max-width: 767px ) {
+
+        .card{
+            flex-direction: column; /*수직 정렬*/
+            width: 18rem;
+        }
+        .card img{
+            width: 18rem;
+        }
+
+        .card .card-body{
+            position: relative;
+        }
+
+    }
+
 }
 
 .section-Posting {
