@@ -3,10 +3,6 @@ body {
   /* 생략 */
 }
 
-div{
-    border: 1px solid green;
-}
-
 /*  각 세션 설정 */
 .section {
     position: relative;
@@ -186,14 +182,44 @@ div{
         display: grid;
         grid-template-columns: repeat( 4, 1fr );
         margin: 1px;
-    }
-
-    @media ( max-width: 767px ) {
-        .row{
+        padding:10px;
+        @media ( max-width: 767px ) {
             display: grid;
-            grid-template-columns: repeat( 2, 1fr );       
+            padding:3px;
+            grid-template-columns: repeat( 2, 1fr );  
+        }
+        .card{
+            .card-img-top{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                padding:5px;
+            }
+
+            .card-body{
+                .card-title{
+                    font-size: 1.25rem;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+
+                }
+                .card-text{
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 3;
+                    overflow: hidden;
+                }
+                /* .text-body-secondary{
+
+                } */
+            }
+
         }
     }
+
+    
 }
 
 
