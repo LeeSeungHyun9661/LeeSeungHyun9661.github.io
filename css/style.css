@@ -1,16 +1,39 @@
 body {
    padding-top: 40px;
    /* 생략 */
+   background: linear-gradient(#e66465, #9198e5);
 }
 
 /*  각 세션 설정 */
 .section {
    position: relative;
    padding: 1rem;
+
+   hr {
+      margin: 5px;
+   }
+   .section-inner {
+      background-color: white;
+      border-radius: 1%;
+      padding: 5%;
+      box-shadow: 0 0 15px rgb(82, 80, 80);
+      width: 90%;
+      margin: auto;
+
+      @media (max-width: 1024px) {
+         
+      }
+   }
 }
 /* 각 세션 제목 설정 */
 .title {
    text-align: left;
+   color: aliceblue;
+}
+.section-Front {
+   position: relative;
+   min-height: 600px;
+   height: auto;
 }
 
 /* 세션 - About */
@@ -22,12 +45,11 @@ body {
       display: flex;
       text-align: center;
       justify-content: center;
+      top: 50%;
 
       .profile-img img {
          height: auto;
          object-fit: cover;
-         border-radius: 50%;
-         border: 1px solid black;
          aspect-ratio: 1 / 1;
       }
       .profile-text {
@@ -35,13 +57,19 @@ body {
          flex: 0 1 auto;
          flex-direction: column;
          align-self: stretch;
-         text-align: center;
+         text-align: left;
          margin-left: 30px;
          padding: 100px 0px;
 
-         .social-icons{
+         h3,
+         i,
+         p,
+         div {
+            margin: 0.5rem;
+         }
+
+         .social-icons {
             margin: 0 auto;
-            max-width: 70%;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -54,7 +82,7 @@ body {
       }
    }
 
-   @media (max-width: 767px) {
+   @media (max-width: 1024px) {
       .information {
          display: block;
          position: relative;
@@ -66,9 +94,7 @@ body {
             max-width: 40%;
             height: auto;
             object-fit: cover;
-            border-radius: 50%;
             vertical-align: middle;
-            border: 1px solid red;
             aspect-ratio: 1 / 1;
          }
 
@@ -78,7 +104,6 @@ body {
 
             .social-icons {
                margin: 0 auto;
-               max-width: 40%;
                display: flex;
                flex-wrap: wrap;
                justify-content: space-between;
@@ -98,7 +123,7 @@ body {
    min-height: 600px;
    height: auto;
 
-   .experience-timeline {
+   .section-inner {
       ul {
          --col-gap: 2rem;
          --row-gap: 2rem;
@@ -145,7 +170,8 @@ body {
          margin-inline: calc(var(--inlineP) * -1);
 
          text-align: center;
-         background-color: var(--accent-color);
+         /* background-color: var(--accent-color); */
+         background-color: aliceblue;
 
          color: white;
          font-size: 1.25rem;
@@ -163,7 +189,8 @@ body {
          content: "";
          width: var(--inlineP);
          aspect-ratio: 1;
-         background: var(--accent-color);
+         background: aliceblue;
+         /* background: var(--accent-color); */
          background-image: linear-gradient(
             rgba(0, 0, 0, 0.2) 100%,
             transparent
@@ -182,7 +209,8 @@ body {
          width: 2rem;
          aspect-ratio: 1;
          background: var(--bgColor);
-         border: 0.3rem solid var(--accent-color);
+         /* border: 0.3rem solid var(--accent-color); */
+         border: 0.3rem solid aliceblue;
          border-radius: 50%;
          top: 50%;
 
@@ -234,7 +262,7 @@ body {
          bottom: 0.25rem;
       }
 
-      @media (min-width: 40rem) {
+      @media (min-width: 1024px) {
          ul {
             grid-template-columns: 1fr var(--line-w) 1fr;
          }
@@ -273,22 +301,24 @@ body {
    position: relative;
    height: auto;
 
-   .skills .row {
-      display: flex;
-      justify-content: space-around;
-      width: auto;
-   }
-   .skills .row .col-md-auto {
-      width: auto;
-   }
+   .section-inner {
+      .row {
+         display: flex;
+         justify-content: space-around;
+         width: auto;
+      }
+      .row .col-md-auto {
+         width: auto;
+      }
 
-   .skills .row img {
-      width: 5rem;
-   }
+      .row img {
+         width: 5rem;
+      }
 
-   @media (max-width: 767px) {
-      .skills .row img {
-         width: 3rem;
+      @media (max-width: 1024px) {
+         .row img {
+            width: 3rem;
+         }
       }
    }
 }
@@ -319,7 +349,7 @@ body {
    .card img {
       width: 40rem;
    }
-   @media (max-width: 767px) {
+   @media (max-width: 1024px) {
       .card {
          flex-direction: column; /*수직 정렬*/
          width: 18rem;
@@ -351,9 +381,9 @@ body {
       grid-template-columns: repeat(4, 1fr);
       margin: 1px;
       padding: 10px;
-      @media (max-width: 767px) {
+      @media (max-width: 1024px) {
          display: grid;
-         padding: 3px;
+         padding: 5px;
          grid-template-columns: repeat(2, 1fr);
       }
       .card {
@@ -369,8 +399,8 @@ body {
             display: flex;
             flex-direction: column;
             padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
-            @media (max-width: 767px) {
-               padding: 3px;
+            @media (max-width: 1024px) {
+               padding: 5px;
             }
             .card-title {
                font-size: 1.25rem;
@@ -387,8 +417,6 @@ body {
                overflow: hidden;
             }
          }
-         /* .card-footer{
-            } */
       }
    }
 }

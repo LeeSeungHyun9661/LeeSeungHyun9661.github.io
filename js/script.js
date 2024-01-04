@@ -1,8 +1,8 @@
 // 상단 메뉴바 - 버튼 클릭으로 해당 세션 이동
 $('.nav-link').click(function (e) {
    var href = $(this).attr("href");
-   var targetTop = $(href).offset().top -60 ;
-   $("html").stop().animate({ scrollTop : targetTop }, 300);
+   var targetTop = $(href).offset().top -40 ;
+   $("html").stop().animate({ scrollTop : targetTop }, 100);
    e.preventDefault();
 });
 // 상단 메뉴바 - 버튼 상태 업데이트 / 오프셋 값에 따라 
@@ -12,13 +12,9 @@ function Page__updateIndicatorActive() {
       var offsetTop = parseInt($(this).attr("data-offset-top"));
       if (scrollTop >= offsetTop) { 
          $(".nav-link.active").removeClass("active");
-
          var currentPageIndex = $(this).index();
-
          $(".nav-link").eq(currentPageIndex).addClass("active");
-
          $("html").attr("data-current-page-index", currentPageIndex);
-
          return false;
       }
    });
@@ -27,7 +23,7 @@ function Page__updateIndicatorActive() {
 function Page__updateOffsetTop() {    
     $(".section").each(function (index, node) {
          var $page = $(node);
-         var offsetTop = $page.offset().top - 60;
+         var offsetTop = $page.offset().top - 40;
          $page.attr("data-offset-top", offsetTop);
     });    
     // 계산이 바뀌었으니까, 다시 상태 업데이트
