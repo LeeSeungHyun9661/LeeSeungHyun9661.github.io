@@ -48,4 +48,7 @@ $(window).scroll(Page__updateIndicatorActive);
 // 참고 출처 : https://codepen.io/kimyangsun/pen/vYEqWee
 
 // flipster
-var coverflow = $("#coverflow").flipster();
+var coverflow = $("#coverflow").flipster({
+   style: 'coverflow',
+   start: "center"
+});
