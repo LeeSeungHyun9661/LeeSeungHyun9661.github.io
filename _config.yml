@@ -3,15 +3,15 @@ minimal_mistakes_skin    : "default"  # 전체적인 블로그의 색감을 정�
                            # "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "ko-KR"    # 블로그의 주요 언어입니다. 한국어로 보려고 ko-KR로 설정했습니다.
-title                    : "이승현의 포트폴리오"  # 사이트 탭에서 보이는 이름입니다.
+locale                   : "ko-KR" 
+title                    : "이승현의 포트폴리오"
 title_separator          : "-"
-subtitle                 : ""              # 화면 title 하단에 있는 소제목입니다.
-name                     : "이승현"      # 화면 하단 영역의 이름입니다.
-description              : "포트폴리오"   # 설명란입니다. (어디 적용되는지 모르겠네요...) 
-url                      : "https://LeeSeungHyun9661.github.io" # 현재의 블로그 url 입니다.
-baseurl                  : # 폴백(예기치 못한 오류)일 때 연결되는 url입니다.
-repository               : "https://github.com/LeeSeungHyun9661/LeeSeungHyun9661.github.io.git" # Github Repo url입니다.
-teaser                   : # 폴백일 때 보일 이미지입니다. "assets/images/"로 연결됩니다.
-logo                     : # 화면에 보여지는 logo 이미지입니다. "assets/images"로 세팅합니다.
-masthead_title           : "안녕하세요!"     # 화면 title 입니다.
+subtitle                 : ""  
+name                     : "이승현"
+description              : "포트폴리오" 
+url                      : "https://LeeSeungHyun9661.github.io"
+baseurl                  : 
+repository               : "https://github.com/LeeSeungHyun9661/LeeSeungHyun9661.github.io.git"
+teaser                   :
+logo                     : 
+masthead_title           : "안녕하세요!" .
