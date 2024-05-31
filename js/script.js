@@ -69,7 +69,7 @@ const title = document.querySelector(".text-title");
 const speed = 100;
 let i = 0;
 // 글자 모음
-const letters = ["Hello, World!", "안녕하세요, 반갑습니다."];
+const letters = ["DATA ANALYST", "WEB DEVELOPER"];
 
 const typing = async () => {
    const letter = letters[i].split("");
