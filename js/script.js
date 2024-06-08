@@ -46,14 +46,48 @@ $(window).scroll(Page__updateIndicatorActive);
 // 참고 출처 : https://codepen.io/kimyangsun/pen/vYEqWee
 
 $("#wheel").flipster({
-   style: 'flat',
+   style: "flat",
    spacing: -0.25,
-   start: 'center',
+   start: 0,
    onItemSwitch: function (current) {
-      //current는 현재 아이템에 해당한다.
       value = current.getElementsByTagName("img")[0].getAttribute("value");
-      // 현재 아이템의 img가 가지고 있는 value값을 가져온다.
-
-      // 가져온 값을 통해 변경을 지정하는 함수로 전달한다.
+      loadFlipsterItem(value);
    },
 });
+loadFlipsterItem("0");
+
+function loadFlipsterItem(value) {
+   var img = "";
+   var projectTitle = "";
+   var contents = [];
+   switch (value) {
+      case "0":
+         img = "assets/img/on-work.png";
+         projectTitle = "About Java";
+         contents = [
+            "h1 style='font-size: 30px;'",
+            "Basic knowledge of the Java programming language",
+            "p style='font-size: 20px;'",
+            "On this website, you can learn what is java and how to use java language proper",
+         ];
+         break;
+      case "1":
+         img = "assets/img/on-work.png";
+         projectTitle = "title2";
+         contents = ["h1", "How all this Think Work?", "p", "Lets Find out!"];
+         break;
+   }
+   $("#projectInfo").fadeOut(200, function () {
+      console.log("비우기");
+      $("#projectImage").attr("src", img);
+      $("#projectTitle").text(projectTitle);
+      $("#projectContetns").empty();
+      for (var i = 0; i < contents.length; i += 2) {
+         $("#projectContetns").append(
+            "<" + contents[i] + ">" + contents[i + 1] + "</" + contents[i] + ">"
+         );
+      }
+      $("#projectInfo").fadeIn(200);
+   });
+   console.log(value);
+}

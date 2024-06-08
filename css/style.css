@@ -1,22 +1,24 @@
 body {
    font-family: "Noto Sans KR", sans-serif;
-   background-color: antiquewhite;
+   background-color: gray;
    padding-top: 50px;
 }
 .page{
    height: 100vh;
-   margin:0 auto;
-   padding: 50px;
+   margin: 0 auto;
+   padding-top: 50px;
    background-color: white;
    max-width: 1024px;
    @media (max-width: 1024px) {  
       width: auto;
    }
+   /* 그림자 */
+   box-shadow: 0 10px 35px rgba(0, 0, 0, 1), 0 6px 6px rgba(0, 0, 0, 0.1);
 }
 
-div{
+/* div{
    border: 1px solid crimson;
-}
+} */
 
 header{
    position: fixed;
@@ -26,12 +28,15 @@ header{
 }
 
 .flipster-card{
-   width: 15vw; 
-   height:15vw;
+   height: 20vh;
+   width: 20vh;
    @media (max-width: 1024px) { 
-      min-width: 150px;
-      min-height: 150px;
-      width: 25vw; 
-      height:25vw;
+      height: 20vh;
+      width: 20vh;
    }
+}
+
+#icon{
+   width: 5vw;
+   height: 5vw;
 }
