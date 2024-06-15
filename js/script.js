@@ -48,12 +48,13 @@ $(window).scroll(Page__updateIndicatorActive);
 //Flipster 이벤트
 $("#wheel").flipster({
    style: "flat",
-   spacing: -0.25,
+   spacing: -0.1,
    start: 0,
    onItemSwitch: function (current) {
       value = current.getElementsByTagName("img")[0].getAttribute("value");
       loadFlipsterItem(value);
    },
+   scrollwheel: false,
 });
 loadFlipsterItem("0");
 function loadFlipsterItem(value) {
@@ -76,9 +77,13 @@ function loadFlipsterItem(value) {
          projectTitle = "title2";
          contents = ["h1", "How all this Think Work?", "p", "Lets Find out!"];
          break;
+      case "2":
+         img = "assets/img/on-work.png";
+         projectTitle = "title2";
+         contents = ["h1", "How all this Think Work?", "p", "Lets Find out!"];
+         break;
    }
    $("#projectInfo").fadeOut(200, function () {
-      console.log("비우기");
       $("#projectImage").attr("src", img);
       $("#projectTitle").text(projectTitle);
       $("#projectContetns").empty();
@@ -89,7 +94,6 @@ function loadFlipsterItem(value) {
       }
       $("#projectInfo").fadeIn(200);
    });
-   console.log(value);
 }
 
 window.onload = () => {

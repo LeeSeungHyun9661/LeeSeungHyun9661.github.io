@@ -32,33 +32,18 @@
   </head>
 
   <body>
-    <!-- 상단 메뉴바 
-    <header class="d-flex justify-content-center py-1 text-bg-dark" style="z-index: 2;">
-
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a href="#page-home" class="nav-link px-2 text-secondary" aria-current="page">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="#page-about" class="nav-link px-2 text-white">About</a>
-        </li>
-        <li class="nav-item">
-          <a href="#page-project" class="nav-link px-2 text-white">Project</a>
-        </li>
-      </ul>
-    </header>-->
+    <div class="bg"></div>
 
     <div class="pages">
       <!-- 프로필 -->
-      <div class="page" id="page-home"></div>
+      <div class="page" id="page-home" style="background-color: #2e2f31;"></div>
 
       <!-- 소개 -->
       <div class="page" id="page-about">
         <div class="row gx-0" style="height: 100%; width: 100%;">
           <div class="col-4 p-0">
             <!-- 소개 이미지 -->
-            <img class="p-0" style="height: 40%; width: 100%;
-            object-fit: contain;" src="assets/img/raccoon.jpg">
+            <img class="p-0" style="height: 40%; width: 100%; object-fit: cover;" src="assets/img/raccoon.jpg">
             <!-- 소개 내용 -->
             <div class="p-3" style="height: 60%; background-color: #2e2f31; color :azure;">
 
@@ -73,7 +58,7 @@
                 <h4 style="font-size: 15px; font-weight: 300;">dltmdgus9661@gmail.com</h4>
                 <hr class="m-2">
                 <h3 style="font-size: 20px; font-weight: 500;">Adrresss_</h3>
-                <h4 style="font-size: 15px; font-weight: 300;">Gyeongsangbuk-do Goreong</h4>
+                <h4 style="font-size: 15px; font-weight: 300;">Daegu Metropolitan City, South Korea</h4>
                 <hr class="m-2">
                 <h3 style="font-size: 20px; font-weight: 500;">Education_</h3>
                 <h4 style="font-size: 15px; font-weight: 300;">Yeungnam University</h4>
@@ -84,7 +69,7 @@
                 <div class="container text-center ms-auto">
                   <div class="row align-items-center">
                     <div class="col">
-                      <a href="https://github.com/LeeSeungHyun9661">
+                      <a href="https://github.com/seunghyeonlee9661">
                         <i class="bi bi-github fs-5" style="color :azure"></i>
                       </a>
                     </div>
@@ -111,7 +96,7 @@
 
           </div>
 
-          <div class="col-8" style="padding:50px">
+          <div class="col-8" style="padding-left:30px;padding-right:30px">
             <!-- 이름 및 인사말 -->
             <div class="namespace" style="display:flex;height: auto;">
               <p class="m-0" style="font-size: 4vh; font-weight:500; color: #2e2f31;">Lee Seung Hyun</p>
@@ -144,10 +129,9 @@
                     <strong>JavaScript</strong>.
                   </li>
                 </ul>
-  
+
               </div>
             </div>
-           
 
             <!-- 자격증 -->
             <p class="m-0 mt-3 " style="font-size: 2vh; font-weight:500; color: #2e2f31;">Certificate</p>
@@ -233,7 +217,7 @@
       </div>
       <!-- 스킬 <div class="page" id="page-skill" style="height: auto;"> <div class="vstack gap-0" style="padding:50px"></div> </div> 경력 <div class="page" id="page-experience"></div> -->
 
-      <!-- 프로젝트 -->
+      <!-- 큰 프로젝트 -->
       <div class="page" id="page-project" style=" display: flex; flex-direction: column;">
         <div id="wheel" style="height: auto; overflow: hidden;">
           <ul>
@@ -247,28 +231,40 @@
             <li class="flipster-card">
               <img src="assets/img/on-work.png" alt="..." value="2"/>
             </li>
-            <li class="flipster-card">
-              <img src="assets/img/on-work.png" alt="..." value="3"/>
-            </li>
-            <li class="flipster-card">
-              <img src="assets/img/on-work.png" alt="..." value="4"/>
-            </li>
             <!-- Project : onWorking -->
           </ul>
         </div>
         <div id="projectInfo" class="row gx-0" style="flex: 1; width: 100%; ">
-          <div class="col-8 p-0">
-            <img id="projectImage" src="assets/img/on-work.png" style="width: 100%;"/>
+          <div class="col-8 p-0" style="object-fit: cover;">
+            <img id="projectImage" src="assets/img/on-work.png" style="width: 100%; height: 100%;"/>
           </div>
           <div class="col-4 p-3" style="background-color: #2e2f31; color :azure">
             <h1 id="projectTitle" style="font-size: 30px;">title</h1>
             <hr>
             <div id="projectContetns"></div>
           </div>
-
         </div>
-
       </div>
+
+      <!-- 작은 프로젝트 -->
+      <div class="page" id="page-project" style=" display: flex; flex-direction: column;">
+        <div class="row row-cols-5 gx-0 gap-0">
+          <div class="col p-2" id="tproject">
+            <div class="card" onclick="location.href='https://github.com/seunghyeonlee9661/InorOut'">
+              <img src="/assets/img/inorout.png" class="card-img-top p-2" style="object-fit: contain; height: 10vh;">
+              <div class="card-body p-2">
+                <h5 class="card-title" style="font-size: 1.5vh;">In or Out</h5>
+                <p class="card-text" style="font-size: 1.4vh; word-break:break-word;">Point-in-Polygon Algorithm using Java GUI</p>
+              </div>
+              <div class="card-footer p-1">
+                <span class="badge text-bg-primary" style="font-size: 1.3vh;">Java</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
     </div>
 
     <!-- 페이징 -->
