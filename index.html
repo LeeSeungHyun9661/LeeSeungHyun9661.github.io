@@ -32,7 +32,7 @@
   </head>
 
   <body>
-    <!-- 상단 메뉴바 -->
+    <!-- 상단 메뉴바 
     <header class="d-flex justify-content-center py-1 text-bg-dark" style="z-index: 2;">
 
       <ul class="nav nav-pills">
@@ -43,16 +43,10 @@
           <a href="#page-about" class="nav-link px-2 text-white">About</a>
         </li>
         <li class="nav-item">
-          <a href="#page-skill" class="nav-link px-2 text-white">Skill</a>
-        </li>
-        <li class="nav-item">
-          <a href="#page-experience" class="nav-link px-2 text-white">Experience</a>
-        </li>
-        <li class="nav-item">
           <a href="#page-project" class="nav-link px-2 text-white">Project</a>
         </li>
       </ul>
-    </header>
+    </header>-->
 
     <div class="pages">
       <!-- 프로필 -->
@@ -117,138 +111,127 @@
 
           </div>
 
-          <div class="col-8 p-4">
+          <div class="col-8" style="padding:50px">
+            <!-- 이름 및 인사말 -->
+            <div class="namespace" style="display:flex;height: auto;">
+              <p class="m-0" style="font-size: 4vh; font-weight:500; color: #2e2f31;">Lee Seung Hyun</p>
+              <p class="m-2" style="font-size: 2vh; font-weight: 500;  align-self: flex-end; height: auto; color: #414246;">이승현</p>
+            </div>
+            <p class="m-1" style="font-size: 1.5vh; font-weight:500;">Hi! I am Junior Programmer and Web Developer!</p>
 
-            <div class="namespace" style="display: flex; height: auto;">
-              <p class="m-0" style="font-size: 10vh; font-weight:500;">이승현</p>
-              <p class="m-0 mb-3" style="font-size: 4vh; font-weight: 500;  align-self: flex-end; height: 6vh;">Lee Seung Hyun</p>
+            <p class="m-0  mt-3" style="font-size: 2vh; font-weight:500; color: #2e2f31;">Experience</p>
+            <div class="p-2">
+              <div class="card p-2 m-0">
+                <div class="hstack gap-1">
+                  <div id="experience" class="p-0">Web & Database Developer
+                  </div>
+                  <div id="experience" class="p-0 ms-auto">2022.03 ~ 2023.02 /</div>
+                  <div id="experience" class="p-0">Daegu, Korea</div>
+                </div>
+                <h3 class="m-0" style="font-size: 2vh; font-weight:500;">Dipping AI</h3>
+                <p class="m-0 p-0" style="font-size: 1.5vh; font-weight:500; color: #2e2f31;">
+                  Development of Book Recommendation Web Platform</p>
+                <ul style="padding-left: 1.5rem;">
+                  <li style="font-size: 1.5vh; font-weight:300; color: #2e2f31;">
+                    <strong>Database Construction</strong>: Built and managed the database using
+                    <strong>MySQL</strong>.
+                  </li>
+                  <li style="font-size: 1.5vh; font-weight:300; color: #2e2f31;">
+                    <strong>Web Development</strong>: Responsible for backend development using
+                    <strong>Django (Python)</strong>, and frontend development using
+                    <strong>HTML</strong>
+                    and
+                    <strong>JavaScript</strong>.
+                  </li>
+                </ul>
+  
+              </div>
+            </div>
+           
+
+            <!-- 자격증 -->
+            <p class="m-0 mt-3 " style="font-size: 2vh; font-weight:500; color: #2e2f31;">Certificate</p>
+            <div class="p-2">
+              <div class="card p-2 m-0">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Publicsh</th>
+                      <th scope="col">Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Engineer Information Processing</td>
+                      <td>HDR Korea(public)</td>
+                      <td>2023.11</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
             </div>
 
-            <!-- 개발자 왜 하는지 -->
-            <div class="textspace">
-              <p class="m-0" style="font-size: 2vh; font-weight:300;">The reaseon why I like Programming is</p>
-
-            </div>
-
-            <!-- 개발자로써의 목표 -->
-            <div class="textspace">
-              <p class="m-0" style="font-size: 2vh; font-weight:300;">좋은 개발자가 된다는 것은...</p>
-            </div>
-
-            <!-- 내가 되고 싶은 분야 목록 3개 -->
-            <div class="row gx-0 gap-3">
-              <p>So I want to be...</p>
-              <div class="card col p-0" style="width: 18rem;">
-                <div class="card-body">
-                  <p class="card-text">Web Developer</p>
+            <!-- 기술 스택 -->
+            <p class="m-0 mt-3" style="font-size: 2vh; font-weight:500; color: #2e2f31;">Skill</p>
+            <div class="row row-cols-5 gx-0 gap-0">
+              <div class="col p-2">
+                <div class="card p-1">
+                  <img class="card-img-top" id="icon" src="assets/img/icon-django.png"/>
                 </div>
               </div>
-              <div class="card col p-0" style="width: 18rem;">
-                <div class="card-body">
-                  <p class="card-text">Software Developers</p>
+              <div class="col p-2">
+                <div class="card p-1">
+                  <img id="icon" src="assets/img/icon-spring.png"/>
                 </div>
               </div>
-              <div class="card col p-0" style="width: 18rem;">
-                <div class="card-body">
-                  <p class="card-text">Database Developer</p>
+              <div class="col p-2">
+                <div class="card p-1">
+                  <img id="icon" src="assets/img/icon-jsp.png"/>
+                </div>
+              </div>
+              <div class="col p-2">
+                <div class="card p-1">
+                  <img id="icon" src="assets/img/icon-html.png"/>
+                </div>
+              </div>
+              <div class="col p-2">
+                <div class="card p-1">
+                  <img id="icon" src="assets/img/icon-css.png"/>
+                </div>
+              </div>
+
+              <div class="col p-2">
+                <div class="card p-1">
+                  <img id="icon" src="assets/img/icon-js.png"/>
+                </div>
+              </div>
+              <div class="col p-2">
+                <div class="card p-1">
+                  <img id="icon" src="assets/img/icon-java.png"/>
+                </div>
+              </div>
+              <div class="col p-2">
+                <div class="card p-1">
+                  <img id="icon" src="assets/img/icon-python.png"/>
+                </div>
+              </div>
+              <div class="col p-2">
+                <div class="card p-1">
+                  <img id="icon" src="assets/img/icon-mysql.png"/>
+                </div>
+              </div>
+              <div class="col p-2">
+                <div class="card p-1">
+                  <img id="icon" src="assets/img/icon-github.png"/>
                 </div>
               </div>
             </div>
-
           </div>
-
         </div>
-
       </div>
-
-      <!-- 스킬 -->
-      <div class="page" id="page-skill" style="height: auto;">
-        <div class="vstack gap-0" style="padding:50px">
-
-          <div class="row">
-            <div class="col-4 vstack gap-0">
-              <h2 style="font-size: 25px; font-weight: 500;">BackEnd</h2>
-              <div class="hstack gap-3">
-                <img id="icon" src="assets/img/icon-django.png"/>
-                <img id="icon" src="assets/img/icon-spring.png"/>
-                <img id="icon" src="assets/img/icon-jsp.png"/>
-              </div>
-            </div>
-              <div class="col-8 card">
-                <div class="card-body">
-                  This is some text within a card body.
-                </div>
-              </div>
-          </div>
-
-          <hr>
-          <div class="row">
-            <div class="col-4 vstack gap-0">
-              <h2 style="font-size: 25px; font-weight: 500;">FrontEnd</h2>
-              <div class="hstack gap-3">
-                <img id="icon" src="assets/img/icon-html.png"/>
-                <img id="icon" src="assets/img/icon-css.png"/>
-                <img id="icon" src="assets/img/icon-js.png"/>
-              </div>
-            </div>
-              <div class="col-8 card">
-                <div class="card-body">
-                  This is some text within a card body.
-                </div>
-              </div>
-          </div>
-          <hr>
-
-          <div class="row">
-            <div class="col-4 vstack gap-0">
-              <h2 style="font-size: 25px; font-weight: 500;">Language</h2>
-              <div class="hstack gap-3">
-                <img id="icon" src="assets/img/icon-java.png"/>
-                <img id="icon" src="assets/img/icon-python.png"/>
-              </div>
-            </div>
-              <div class="col-8 card">
-                <div class="card-body">
-                  This is some text within a card body.
-                </div>
-              </div>
-          </div>
-          <hr>
-
-          <div class="row">
-            <div class="col-4 vstack gap-0">
-              <h2 style="font-size: 25px; font-weight: 500;">Database</h2>
-              <div class="hstack gap-3">
-                <img id="icon" src="assets/img/icon-mysql.png"/>
-              </div>
-            </div>
-              <div class="col-8 card">
-                <div class="card-body">
-                  This is some text within a card body.
-                </div>
-              </div>
-          </div>
-          <hr>
-
-          <div class="row">
-            <div class="col-4 vstack gap-0">
-              <h2 style="font-size: 25px; font-weight: 500;">Version Control</h2>
-              <div class="hstack gap-3">
-                <img id="icon" src="assets/img/icon-git.png"/>
-                <img id="icon" src="assets/img/icon-github.png"/>
-              </div>
-            </div>
-              <div class="col-8 card">
-                <div class="card-body">
-                  This is some text within a card body.
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-
-      <!-- 경력 -->
-      <div class="page" id="page-experience"></div>
+      <!-- 스킬 <div class="page" id="page-skill" style="height: auto;"> <div class="vstack gap-0" style="padding:50px"></div> </div> 경력 <div class="page" id="page-experience"></div> -->
 
       <!-- 프로젝트 -->
       <div class="page" id="page-project" style=" display: flex; flex-direction: column;">
@@ -287,6 +270,9 @@
 
       </div>
     </div>
+
+    <!-- 페이징 -->
+    <ul class="pagination"></ul>
 
   </body>
   <!-- JS / Custom -->
