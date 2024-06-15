@@ -1,13 +1,13 @@
 # Site Settings
 locale                   : "ko-KR" 
-title                    : "이승현의 포트폴리오"
+title                    : "seunghyeon lee's profile"
 title_separator          : "-"
 subtitle                 : ""  
-name                     : "이승현"
-description              : "포트폴리오" 
-url                      : "https://LeeSeungHyun9661.github.io"
+name                     : "seunghyeon lee"
+description              : "" 
+url                      : "https://seunghyeonlee9661.github.io"
 baseurl                  : 
-repository               : "https://github.com/LeeSeungHyun9661/LeeSeungHyun9661.github.io.git"
+repository               : "https://github.com/seunghyeonlee9661/seunghyeonlee9661.github.io.git"
 teaser                   :
 logo                     : 
-masthead_title           : "안녕하세요!"
+masthead_title           : "This is seunghyeon's Programmer Profile"
