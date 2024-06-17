@@ -45,17 +45,18 @@ $(window).resize(Page__updateOffsetTop);
 $(window).scroll(Page__updateIndicatorActive);
 // 참고 출처 : https://codepen.io/kimyangsun/pen/vYEqWee
 
+//Flipster 이벤트
 $("#wheel").flipster({
    style: "flat",
-   spacing: -0.25,
+   spacing: -0.1,
    start: 0,
    onItemSwitch: function (current) {
       value = current.getElementsByTagName("img")[0].getAttribute("value");
       loadFlipsterItem(value);
    },
+   scrollwheel: false,
 });
 loadFlipsterItem("0");
-
 function loadFlipsterItem(value) {
    var img = "";
    var projectTitle = "";
@@ -76,9 +77,13 @@ function loadFlipsterItem(value) {
          projectTitle = "title2";
          contents = ["h1", "How all this Think Work?", "p", "Lets Find out!"];
          break;
+      case "2":
+         img = "assets/img/on-work.png";
+         projectTitle = "title2";
+         contents = ["h1", "How all this Think Work?", "p", "Lets Find out!"];
+         break;
    }
    $("#projectInfo").fadeOut(200, function () {
-      console.log("비우기");
       $("#projectImage").attr("src", img);
       $("#projectTitle").text(projectTitle);
       $("#projectContetns").empty();
@@ -89,5 +94,58 @@ function loadFlipsterItem(value) {
       }
       $("#projectInfo").fadeIn(200);
    });
-   console.log(value);
 }
+
+window.onload = () => {
+   const Slider = function (pages, pagination) {
+      let slides = [],
+         btns = [],
+         count = 0,
+         current = 0,
+         touchstart = 0,
+         animation_state = false;
+
+      const init = () => {
+         slides = pages.children;
+         count = slides.length;
+         for (let i = 0; i < count; i++) {
+            slides[i].style.bottom = -(i * 100) + "%";
+            let btn = document.createElement("li");
+            btn.dataset.slide = i;
+            btn.addEventListener("click", btnClick);
+            btns.push(btn);
+            pagination.appendChild(btn);
+         }
+         btns[0].classList.add("active");
+      };
+
+      const gotoNum = (index) => {
+         if (index != current && !animation_state) {
+            animation_state = true;
+            setTimeout(() => (animation_state = false), 500);
+            btns[current].classList.remove("active");
+            current = index;
+            btns[current].classList.add("active");
+            for (let i = 0; i < count; i++) {
+               slides[i].style.bottom = (current - i) * 100 + "%";
+            }
+         }
+      };
+
+      const gotoNext = () =>
+         current < count - 1 ? gotoNum(current + 1) : false;
+      const gotoPrev = () => (current > 0 ? gotoNum(current - 1) : false);
+      const btnClick = (e) => gotoNum(parseInt(e.target.dataset.slide));
+      pages.ontouchstart = (e) => (touchstart = e.touches[0].screenY);
+      pages.ontouchend = (e) =>
+         touchstart < e.changedTouches[0].screenY ? gotoPrev() : gotoNext();
+      pages.onmousewheel = pages.onwheel = (e) =>
+         e.deltaY < 0 ? gotoPrev() : gotoNext();
+
+      init();
+   };
+
+   let pages = document.querySelector(".pages");
+   let pagination = document.querySelector(".pagination");
+   let slider = new Slider(pages, pagination);
+};
