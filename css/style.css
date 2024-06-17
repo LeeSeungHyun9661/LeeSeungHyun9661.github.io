@@ -8,12 +8,12 @@ body {
    height: 100%;
    padding: 30px;
    position: absolute;
-    bottom: -100%;
-    transition: bottom .7s;  
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+   bottom: -100%;
+   transition: bottom .7s;  
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
 }
 
 .pages{
