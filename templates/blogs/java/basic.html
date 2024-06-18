@@ -36,14 +36,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
 
     <!-- 코드 구문 강조 호출 -->
-    <script>hljs.highlightAll();</script>
+    <script> hljs.highlightAll(); </script>
   </head>
 
-  <body style="width: 100%;">    
-    <!-- 로딩 화면 -->
-    <div class="mask">
-      <img class="loadingImg" src='/assets/img/loading.gif'>
-    </div>
+  <body style="width: 100%;">
+    <div class="bg"></div>
     <div class="postings">
       <main class="d-flex flex-nowrap">
         <!-- 사이드바 -->
@@ -57,7 +54,6 @@
           <!-- 본문 상단부 -->
           <div class="hstack gap-3">
             <div class="p-2" style="font-size: 35px; font-weight:600;">Title</div>
-
             <div class="p-2 ms-auto"></div>
             <div class="p-2">
               <!-- 언어 선택 버튼 -->
@@ -72,25 +68,17 @@
             </div>
           </div>
 
-          <div class="contents">
-
-
+          <div class="contents">   
           </div>
         </div>
       </main>
-
     </div>
+    <!-- blog.js -->
+    <script src="/js/blog.js"></script>
+    <script type="text/javascript">loadContents("basic.html");</script>
 
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <!-- blog.js -->
-    <script src="/js/blog.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $(".contents").load("/templates/blogs/home" + localStorage.getItem("lang") + ".html");
-      });    
-    </script>
-
     <!-- JS / bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 

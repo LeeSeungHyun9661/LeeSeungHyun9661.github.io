@@ -24,6 +24,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet"/>
 
+    <!-- 페이지 이모티콘 -->
     <link rel="icon" href="assets/img/raccoon-32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="assets/img/raccoon-16.png" sizes="16x16" type="image/png">
     <link rel="manifest" href="https://getbootstrap.kr/docs/5.3/assets/img/favicons/manifest.json">
@@ -32,13 +33,16 @@
   </head>
 
   <body>
-    <div class="bg"></div>
+    <!-- 로딩 화면 -->
+    <div class="mask">
+      <img class="loadingImg" src='/assets/img/loading.gif'>
+    </div>
 
+    <!-- 페이지 내용 -->
     <div class="pages">
-      <!-- 프로필 -->
+      <!-- 인사 페이지 -->
       <div class="page" id="page-home" style="background-color: #2e2f31;">
         <button type="button" class="navyBtn" onClick="location.href='/blog.html'">To blog >></button>
-
       </div>
 
       <!-- 소개 -->
@@ -310,8 +314,8 @@
         </div>       
       </div>   
     </div>
-
-    <!-- 페이징 -->
+    
+    <!-- 사이드 페이지네이션 -->
     <ul class="pagination"></ul>
 
   </body>
