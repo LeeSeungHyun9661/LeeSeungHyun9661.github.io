@@ -39,6 +39,133 @@
     <script>
       hljs.highlightAll();
     </script>
+    <style>
+      .timeline {
+        background: var(--primary-color);
+        margin: 0px auto;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        .card {
+          position: relative;
+          background-color: rgba(0, 0, 0, 0);
+          border :none;
+          display: flex;
+          flex-direction: row;
+        }
+
+        /* setting padding based on even or odd */
+        .card:nth-child(odd) {
+          padding: 15px 0 15px 30px;
+        }
+
+        .card:nth-child(even) {
+          padding: 15px 30px 15px 0;
+        }
+
+        /* Global ::before */
+        .card::before {
+          content: "";
+          position: absolute;
+          width: 50%;
+          border: solid #bbc0c5;
+        }
+
+        /* Setting the border of top, bottom, left */
+        .card:nth-child(odd)::before {
+          left: 0;
+          top: -5px;
+          bottom: -5px;
+          border-width: 5px 0 5px 5px;
+          border-radius: 20px 0 0 20px;
+        }
+
+        /* Setting the top and bottom to "-5px" because earlier it was out of a pixel in mobile devices */
+        @media only screen and (max-width: 400px) {
+          .card:nth-child(odd)::before {
+            top: -5px;
+            bottom: -5px;
+          }
+        }
+
+        /* Setting the border of top, bottom, right */
+        .card:nth-child(even)::before {
+          right: 0;
+          top: 0;
+          bottom: 0;
+          border-width: 5px 5px 5px 0;
+          border-radius: 0 20px 20px 0;
+        }
+
+        /* Removing the border if it is the first card */
+        .card:first-child::before {
+          border-top: 0;
+          border-top-left-radius: 0;
+        }
+
+        /* Removing the border if it is the last card  and it's odd */
+        .card:last-child:nth-child(odd)::before {
+          border-bottom: 0;
+          border-bottom-left-radius: 0;
+        }
+
+        /* Removing the border if it is the last card  and it's even */
+        .card:last-child:nth-child(even)::before {
+          border-bottom: 0;
+          border-bottom-right-radius: 0;
+        }
+
+        /* Information about the timeline */
+        .info {
+          display: flex;
+          flex-direction: column;
+          background: #dee2e6;
+          color: black;
+          border-radius: 20px;
+          padding: 10px;
+          p{
+            font-size: 15px;
+          }
+        }
+
+        /* Title of the card */
+        .title {
+          color: black(255, 255, 255);
+          position: relative;
+          font-size: 20px;
+          font-weight: 700;
+        }
+
+        /* Timeline dot  */
+        .title::before {
+          content: "";
+          position: absolute;
+          width: 15px;
+          height: 15px;
+          background: white;
+          border-radius: 999px;
+          border: 3px solid #bbc0c5;
+        }
+
+        /* text right if the card is even  */
+        .card:nth-child(even) > .info > .title {
+          text-align: right;
+        }
+
+        /* setting dot to the left if the card is odd */
+        .card:nth-child(odd) > .info > .title::before {
+          left: -45px;
+        }
+
+        /* setting dot to the right if the card is odd */
+        .card:nth-child(even) > .info > .title::before {
+          right: -45px;
+        }
+      }
+
+      /* Card container */
+    </style>
+
   </head>
 
   <body style="width: 100%;">
@@ -53,10 +180,9 @@
         <!-- 본문 부분 -->
         <div class="posting">
           <!-- 본문 상단부 -->
-          <div class="hstack gap-3">
-            <div class="p-2" style="font-size: 35px; font-weight:600;">Title</div>
-            <div class="p-2 ms-auto"></div>
-            <div class="p-2">
+          <div class="hstack gap-0">
+            <p class="p-2 m-0" style="font-size: 50px; font-weight:600;	margin-bottom: 0;">Intrduction<span style="font-size: 20px; vertical-align: text-bottom;"> : 자바에 대한 소개</span></p>            
+            <div class="p-2 ms-auto">
               <!-- 언어 선택 버튼 -->
               <select class="form-select form-select-sm" aria-label="Small select example" onchange="languageChange()" id="lang">
                 <option value="KR">
@@ -72,7 +198,6 @@
           <div class="contents" style="display: none;"></div>
         </div>
       </main>
-
     </div>
     <!-- blog.js -->
     <script src="/js/blog.js"></script>

@@ -34,7 +34,7 @@ main {
 .posting{
    width: 100%;
    height: auto;
-   padding : 10px;
+   padding : 30px;
    display: flex;
    flex-direction: column;
 }
@@ -195,4 +195,8 @@ main {
   opacity: 0.7;
   filter: drop-shadow(10px 6px 6px #0e0e0e); /*그림자*/
   transform: translateY(-50%);
+}
+
+.post-title{
+  font-weight: bold;
 }
