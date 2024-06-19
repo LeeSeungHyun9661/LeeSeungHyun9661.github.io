@@ -5,92 +5,45 @@
 <ul class="list-unstyled ps-0">
   <!-- 메뉴 1 : 개인적인 부분 -->
   <li class="mb-1">
-    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-      Home
-    </button>
-    <div class="collapse" id="home-collapse">
-      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-        <li>
-          <a class="link-body-emphasis d-inline-flex text-decoration-none rounded">WIL</a>
-        </li>
-        <li>
-          <a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</a>
-        </li>
-        <li>
-          <a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Reports</a>
-        </li>
-      </ul>
-    </div>
+    <p class="m-0 d-inline-flex align-items-center rounded border-0  menu-head">Home</p>
+    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+      <li>
+        <a class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="move('/templates/blogs/java/intro.html')">Intoduction</a>
+      </li>
+    </ul>
   </li>
+  <li class="border-top my-1"></li>
   <!-- 메뉴 2 : 자바에 대한 부분 -->
   <li class="mb-1">
-    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-      Java
-    </button>
-    <div class="collapse" id="dashboard-collapse">
-      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-        <li>
-          <a class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="move('/templates/blogs/java/intro.html')">Intoduction</a>
-        </li>
-        <li>
-          <a class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="move('/templates/blogs/java/basic.html')">Basic</a>
-        </li>
-        <li>
-          <a class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="move('/templates/blogs/java/grammer1.html')">Grammer(1)</a>
-        </li>
-        <li>
-          <a class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="move('/templates/blogs/java/grammer2.html')">Grammer(2)</a>
-        </li>
-        <li>
-          <a class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="move('/templates/blogs/java/grammer3.html')">Grammer(3)</a>
-        </li>
-        <li>
-          <a class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="move('/templates/blogs/java/oop.html')">Object-Oriented Programming</a>
-        </li>
-      </ul>
-    </div>
-  </li>
-  <li class="mb-1">
-    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-      Orders
-    </button>
-    <div class="collapse" id="orders-collapse">
-      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-        <li>
-          <a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New</a>
-        </li>
-        <li>
-          <a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Processed</a>
-        </li>
-        <li>
-          <a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Shipped</a>
-        </li>
-        <li>
-          <a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Returned</a>
-        </li>
-      </ul>
-    </div>
+    <p class="m-0 d-inline-flex align-items-center rounded border-0 menu-head">Java</p>
+    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+      <li>
+        <a class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="move('/templates/blogs/java/intro.html')">Intoduction</a>
+      </li>
+      <li>
+        <a class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="move('/templates/blogs/java/basic.html')">Basic</a>
+      </li>
+      <li>
+        <a class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="move('/templates/blogs/java/grammer1.html')">Grammer(1)</a>
+      </li>
+      <li>
+        <a class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="move('/templates/blogs/java/grammer2.html')">Grammer(2)</a>
+      </li>
+      <li>
+        <a class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="move('/templates/blogs/java/grammer3.html')">Grammer(3)</a>
+      </li>
+      <li>
+        <a class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="move('/templates/blogs/java/oop.html')">Object-Oriented Programming</a>
+      </li>
+    </ul>
   </li>
   <li class="border-top my-3"></li>
   <li class="mb-1">
-    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-      Account
-    </button>
-    <div class="collapse" id="account-collapse">
-      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-        <li>
-          <a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a>
-        </li>
-        <li>
-          <a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a>
-        </li>
-        <li>
-          <a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a>
-        </li>
-        <li>
-          <a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign out</a>
-        </li>
-      </ul>
-    </div>
+    <p class="m-0 d-inline-flex align-items-center rounded border-0  menu-head">Home</p>
+    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+      <li>
+        <a class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="move('/templates/blogs/java/intro.html')">Intoduction</a>
+      </li>
+    </ul>
   </li>
 </ul>

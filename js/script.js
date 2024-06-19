@@ -8,7 +8,7 @@ window.addEventListener('load', function () {
    mask.style.opacity = '0'; //서서히 사라지는 효과
    html.style.overflow = 'auto'; //스크롤 방지 해제
    mask.style.display = 'none';
-  }, 2000);
+  }, 500);
 })
 
 

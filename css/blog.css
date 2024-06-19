@@ -1,7 +1,7 @@
 /* 기본 페이지 설정 */
 
 body {  
-  font-family: "Noto Sans KR", sans-serif;
+  /* font-family: "Noto Sans KR", sans-serif; */
   min-height: 100vh;
   min-height: -webkit-fill-available;
   background-color: gray;
@@ -42,7 +42,7 @@ main {
  
 .dropdown-toggle { outline: 0; }
  
-.btn-toggle {
+.menu-head {
   padding: .25rem .5rem;
   font-weight: 600;
   color: var(--bs-emphasis-color);
