@@ -1,367 +1,357 @@
- <!-- IDE -->
- <div>
-  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1>IDE</h1>
+<div class="hstack gap-0" style="background-color: #dee2e6;">
+  <div class="p-2 ms-auto" style="font-size: 15px;">
+    <strong>Edited Date</strong>: June 20, 2024
   </div>
-  <p>IDE(통합 개발 환경, Integrated Development Environment)는 소프트웨어 개발을 위한 종합 도구 세트를 제공하는 소프트웨어 응용 프로그램입니다. IDE는 개발자가 코드 작성, 편집, 디버깅, 테스트, 그리고 배포를 보다 효율적으로 할 수 있도록 다양한 기능을 통합하여 제공합니다.</p>
-  <ol>
-    <li>
-      <strong>소스 코드 편집기:</strong>
-      코드 작성과 편집을 위한 텍스트 편집기입니다. 문법 강조(syntax highlighting), 코드 자동 완성(code completion), 코드 탐색 기능을 제공합니다.</li>
-    <li>
-      <strong>컴파일러/인터프리터:</strong>
-      작성된 코드를 기계어로 번역하여 실행 가능한 파일로 변환하거나, 즉시 실행하는 도구입니다.</li>
-    <li>
-      <strong>디버거:</strong>
-      코드의 논리적 오류를 찾고 수정할 수 있도록 도와주는 도구입니다. 중단점(breakpoint) 설정, 단계별 실행(step-by-step execution), 변수 값 모니터링 등의 기능을 포함합니다.</li>
-    <li>
-      <strong>빌드 자동화 도구:</strong>
-      코드를 컴파일하고, 링크하고, 배포하는 과정을 자동화하는 도구입니다. Maven, Gradle, Ant 등이 대표적입니다.</li>
-    <li>
-      <strong>버전 관리 통합:</strong>
-      Git, Subversion과 같은 버전 관리 시스템과 통합되어 코드의 버전 관리를 지원합니다. 변경 이력 추적, 분기(branch) 관리, 병합(merge) 등의 기능을 제공합니다.</li>
-    <li>
-      <strong>테스트 도구:</strong>
-      단위 테스트(unit testing), 통합 테스트(integration testing) 등을 통해 코드의 품질을 확인할 수 있는 도구입니다. JUnit, NUnit 등이 예입니다.</li>
-  </ol>
+</div>
+<!-- IDE -->
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+  <h2 class="post-title">IDE</h2>
+</div>
+<p>
+  <strong>IDE (Integrated Development Environment)</strong>
+  is a software application that provides a comprehensive set of tools for software development. IDEs integrate various features to help developers write, edit, debug, test, and deploy code more efficiently.</p>
+<ol>
+  <li>
+    <strong>Source Code Editor:</strong>
+    A text editor for writing and editing code. It offers syntax highlighting, code completion, and code navigation features.</li>
+  <li>
+    <strong>Compiler/Interpreter:</strong>
+    A tool that translates written code into machine code for execution or runs it immediately.</li>
+  <li>
+    <strong>Debugger:</strong>
+    A tool that helps find and fix logical errors in the code. It includes features like setting breakpoints, step-by-step execution, and monitoring variable values.</li>
+  <li>
+    <strong>Build Automation Tools:</strong>
+    Tools that automate the process of compiling, linking, and deploying code. Maven, Gradle, and Ant are prominent examples.</li>
+  <li>
+    <strong>Version Control Integration:</strong>
+    Integration with version control systems like Git and Subversion, supporting version tracking, branch management, and merging.</li>
+  <li>
+    <strong>Testing Tools:</strong>
+    Tools for verifying code quality through unit testing, integration testing, etc. Examples include JUnit and NUnit.</li>
+</ol>
 
-  <p>다음 IDE는 Java 프로그래머들에게 다양한 도구와 기능을 제공하여 코드 작성, 디버깅, 테스트 및 배포 과정을 효율적으로 수행할 수 있도록 돕습니다.</p>
+<p>IDE provides Java programmers with various tools and features to efficiently perform tasks such as coding, debugging, testing, and deployment. Let's explore some popular Java IDEs.</p>
 
-  <div class="row" style="height: auto;">
-    <img class="col-2" src="resources/img/intellij.png" style="float: left; object-fit: contain;">
-    <ul class="col-4">
-      <li>
-        <strong>상용 소프트웨어</strong>: 무료 커뮤니티 버전과 유료 얼티밋 버전이 있습니다. 유료 버전은 더 많은 기능을 제공합니다.</li>
-      <li>
-        <strong>스마트 코드 인텔리전스</strong>: 코드 자동 완성, 코드 분석, 리팩토링 도구 등이 매우 강력합니다.</li>
-      <li>
-        <strong>다양한 언어 지원</strong>: Java 외에도 Kotlin, Groovy, Scala 등을 지원합니다.</li>
-      <li>
-        <strong>Java EE 지원</strong>: 엔터프라이즈 애플리케이션 개발을 위한 다양한 도구와 프레임워크를 지원합니다.</li>
-      <li>
-        <strong>디버깅 및 테스트</strong>: 강력한 디버깅 도구와 JUnit, TestNG 등과의 통합을 제공합니다.</li>
-      <li>
-        <strong>버전 관리 시스템 통합</strong>: Git, SVN, Mercurial 등과의 원활한 통합을 지원합니다.</li>
-    </ul>
-    <img class="col-2" src="resources/img/eclipse.png" style="float: left; object-fit: contain;">
-    <ul class="col-4">
-      <li>
-        <strong>오픈 소스</strong>: 무료로 사용 가능하며, 커뮤니티가 활발하게 발전시킵니다.</li>
-      <li>
-        <strong>플러그인 아키텍처</strong>: 다양한 플러그인을 통해 기능을 확장할 수 있습니다. 예를 들어, Java EE, Web Development, Android Development 등을 위한 플러그인이 있습니다.</li>
-      <li>
-        <strong>강력한 디버깅 도구</strong>: 코드 디버깅을 위한 다양한 기능을 제공합니다.</li>
-      <li>
-        <strong>Git 통합</strong>: Git 버전 관리 시스템과 통합되어 있습니다.</li>
-      <li>
-        <strong>내장 빌드 도구</strong>: Maven 및 Gradle과의 통합을 통해 빌드와 의존성 관리를 손쉽게 할 수 있습니다.</li>
-    </ul>
-  </div>
+<ul class="nav nav-tabs nav-fill">
+  <li class="nav-item align-middle">
+    <img class="nav-link" src="/assets/img/intellij.png" style="object-fit: contain; width:100%; height:100px; padding: 10px;" onclick="changeNav('0')">
+  </li>
+  <li class="nav-item align-middle">
+    <img class="nav-link" src="/assets/img/eclipse.png" style="float: left; object-fit: contain; width:100%; height:100px;" onclick="changeNav('1')">
+  </li>
 
-  <div class="row" style="height: auto;">
-    <img class="col-2" src="resources/img/netbeans.png" style="float: left; object-fit: contain;">
-    <ul class="col-4">
-      <li>
-        <strong>오픈 소스</strong>: 무료로 사용 가능하며, Oracle이 후원하는 IDE입니다.</li>
-      <li>
-        <strong>모듈화된 아키텍처</strong>: 필요에 따라 기능을 추가하거나 제거할 수 있는 모듈식 구조입니다.</li>
-      <li>
-        <strong>Java EE 지원</strong>: Java EE 애플리케이션 개발을 위한 다양한 도구를 제공합니다.</li>
-      <li>
-        <strong>시각적 GUI 디자인 도구</strong>: Swing 및 JavaFX를 사용한 GUI 애플리케이션 개발을 위한 시각적 도구를 제공합니다.</li>
-      <li>
-        <strong>기본 내장 빌드 도구</strong>: Ant, Maven, Gradle 빌드 시스템을 기본적으로 지원합니다.</li>
-      <li>
-        <strong>다양한 언어 지원</strong>: Java 외에도 PHP, JavaScript, HTML5, C/C++ 등을 지원합니다.</li>
-    </ul>
-    <img class="col-2" src="resources/img/JDeveloper.png" style="float: left; object-fit: contain;">
-    <ul class="col-4">
-      <li>
-        <strong>Oracle 제품</strong>: Oracle에서 개발한 IDE로, Oracle 데이터베이스 및 애플리케이션과의 통합이 뛰어납니다.</li>
-      <li>
-        <strong>Java EE 지원</strong>: Java EE 및 웹 애플리케이션 개발에 특화되어 있습니다.</li>
-      <li>
-        <strong>ADF 지원</strong>: Oracle의 Application Development Framework를 지원하여, 엔터프라이즈 애플리케이션 개발을 용이하게 합니다.</li>
-      <li>
-        <strong>시각적 개발 도구</strong>: 시각적 디자이너를 통해 빠르게 UI를 개발할 수 있습니다.</li>
-      <li>
-        <strong>데이터베이스 통합</strong>: 데이터베이스 개발 및 관리 도구를 통합하여 제공합니다.</li>
-    </ul>
-  </div>
+  <li class="nav-item align-middle">
+    <img class="nav-link" src="/assets/img/netbeans.png" style="float:right; object-fit: contain; width:100%; height:100px;" onclick="changeNav('2')">
+  </li>
 
-  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h2>어떤 IDE를 선택해야 하는가</h2>
-  </div>
-  <p>프로그래밍에 정답은 없습니다. 언제나 더 효율적인 방법만이 존재하죠. IDE를 선택하는 기준또한 마찬가지 입니다. 정답은 없습니다. 직접 사용해보고 자신에게 맞는 개발 도구를 사용하는 것이 가장 좋은 방법입니다. 트랜드를 따라가는 방법도 있습니다. 많이 사용된다는 것은 그만큼 정보를 공유하고 문제점을 함께 찾을 사람도 많다는 뜻이니까요.</p>
-  <p>
-    <a href="https://pypl.github.io/IDE.html#google_vignette">PYPL</a>에서는 구글에서 IDE의 다운로드 페이지가 검색된 결과를 기준으로 순위를 표시합니다. IDE의 사용률에 대한 지표로 사용됩니다.</p>
-  <div class="row">
-    <div class="col-6">
-      <table>
-        <tr>
-          <th>RANK</th>
-          <th>IDE</th>
-          <th>Share</th>
-          <th>1-year trend</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Visual Studio</td>
-          <td>28.23 %</td>
-          <td>+0.1 %</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Visual Studio Code</td>
-          <td>13.51 %</td>
-          <td>-0.5 %</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Eclipse</td>
-          <td>11.66 %</td>
-          <td>+0.0 %</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>pyCharm</td>
-          <td>10.73 %</td>
-          <td>+2.0 %</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>Android Studio</td>
-          <td>9.64 %</td>
-          <td>+0.6 %</td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>IntelliJ</td>
-          <td>7.45 %</td>
-          <td>+0.7 %</td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td>NetBeans</td>
-          <td>4.03 %</td>
-          <td>-0.4 %</td>
-        </tr>
-      </table>
-    </div>
-    <div class="col-6">
-      <canvas class="my-4" id="barChart" style="display: block; box-sizing: border-box; height: auto; width: auto;"></canvas>
-      <!-- Jquery -->
-      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-      <script>
-        const data = {
-          labels: [
-            'Visual Studio',
-            'Visual Studio Code',
-            'Eclipse',
-            'pyCharm',
-            'Android Studio',
-            '   IntelliJ',
-            'NetBeans',
-            'etc'
-          ],
-          datasets: [
-            {
-              data: [
-                28.23,
-                13.51,
-                11.66,
-                10.73,
-                9.64,
-                7.45,
-                4.03,
-                15.11
-              ],
-              backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(255, 205, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(201, 203, 207, 0.2)'
-              ],
-              borderColor: [
-                'rgb(255, 99, 132)',
-                'rgb(255, 159, 64)',
-                'rgb(255, 205, 86)',
-                'rgb(75, 192, 192)',
-                'rgb(54, 162, 235)',
-                'rgb(153, 102, 255)',
-                'rgb(201, 203, 207)'
-              ],
-              borderWidth: 1
-            }
-          ]
-        };
-
-        new Chart($('#barChart'), {
-          type: 'doughnut',
-          data: data,
-          options: {
-            legend: {
-              position: 'right'
-            }
-          }
-        });
-      </script>
-
-    </div>
-  </div>
-  <p>Java 언어 IDE중 Eclipse가 가장 많이 사용되고 있네요. 하지만 IntelliJ가 그 뒤를 바짝 따라오고 있습니다. Java 언어 개발을 위해서는 Eclipse와 IntelliJ를 선택하는 것을 추천드립니다.</p>
-
-  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h2>Eclipse IDE vs IntelliJ</h2>
-  </div>
-
-  <h3>Eclipse</h3>
-  <p>Eclipse IDE는 2001년에 IBM에 의해 개발된 소프트웨어 개발 플랫폼으로, IBM의 비주얼 에이지(VisualAge) IDE를 대체하기 위해 만들어졌습니다. Eclipse는 오픈 소스 커뮤니티와 협력하여 발전해왔으며, 다양한 프로그래밍 언어를 지원하는 플러그인 아키텍처를 가지고 있습니다. Java 개발 환경으로서 매우 인기가 높으며, 그 외에도 C/C++, Python, PHP 등 다양한 언어를 지원합니다.</p>
-  <h3>IntelliJ IDEA</h3>
-  <p>IntelliJ IDEA는 2001년 JetBrains에서 출시한 통합 개발 환경(IDE)으로, 주로 Java 개발을 위해 설계되었습니다. 이 IDE는 코드 완성, 디버깅, 리팩토링 등의 강력한 기능을 제공하며, 다양한 프로그래밍 언어와 버전 관리 시스템을 지원합니다. 무료 버전과 유료 버전으로 나뉘며, 유료 버전은 추가적인 고급 기능을 포함하고 있습니다. IntelliJ IDEA는 개발자의 생산성을 높이고 코드 품질을 향상시키는 데 중점을 둡니다.</p>
-
-  <h3>비교</h3>
-
-  <table border="1">
-    <tr>
-      <th>항목</th>
-      <th>Eclipse</th>
-      <th>IntelliJ IDEA</th>
-    </tr>
-    <tr>
-      <td>코드 인텔리전스</td>
-      <td>코드 자동 완성, 문법 강조, 코드 분석 기능 제공, 다소 부족</td>
-      <td>매우 강력한 코드 자동 완성, 코드 분석, 리팩토링 도구 제공, 생산성 향상</td>
-    </tr>
-    <tr>
-      <td>사용자 인터페이스</td>
-      <td>다양한 플러그인과 기능 제공, 초기 설정과 사용법이 복잡할 수 있음</td>
-      <td>직관적이고 깔끔한 인터페이스 제공, 초보자도 쉽게 사용 가능</td>
-    </tr>
-    <tr>
-      <td>플러그인 및 확장성</td>
-      <td>방대한 플러그인 라이브러리 통해 다양한 언어와 프레임워크 지원</td>
-      <td>훌륭한 플러그인 지원, JetBrains에서 제공하는 다양한 도구와 원활한 통합</td>
-    </tr>
-    <tr>
-      <td>성능</td>
-      <td>많은 기능 포함으로 속도가 느려질 수 있음</td>
-      <td>상대적으로 빠른 성능 제공, 대규모 프로젝트에서도 원활하게 동작</td>
-    </tr>
-    <tr>
-      <td>라이선스</td>
-      <td>오픈 소스로 무료 사용 가능</td>
-      <td>커뮤니티 버전 무료 제공, 얼티밋 버전은 상용 라이선스 필요</td>
-    </tr>
-  </table>
-
+  <li class="nav-item align-middle">
+    <img class="nav-link" src="/assets/img/JDeveloper.png" style="float: left; object-fit: contain; width:100%; height:100px;" onclick="changeNav('3')">
+  </li>
+</ul>
+<div class="nav-content">
+  <h3 style="font-weight: bold;">IntelliJ</h3>
+  <p class="m-0">
+    <strong>Commercial Software</strong>: Available in a free Community edition and a paid Ultimate edition, which offers more features.</p>
+  <p class="m-0">
+    <strong>Smart Code Intelligence</strong>: Very powerful code completion, code analysis, and refactoring tools.</p>
+  <p class="m-0">
+    <strong>Supports Various Languages</strong>: Supports Kotlin, Groovy, Scala, and more, in addition to Java.</p>
+  <p class="m-0">
+    <strong>Java EE Support</strong>: Provides various tools and frameworks for enterprise application development.</p>
+  <p class="m-0">
+    <strong>Debugging and Testing</strong>: Offers strong debugging tools and integration with JUnit, TestNG, and more.</p>
+  <p class="m-0">
+    <strong>Version Control Integration</strong>: Smooth integration with Git, SVN, Mercurial, and other version control systems.</p>
+</div>
+<div class="nav-content">
+  <h3 style="font-weight: bold;">Eclipse</h3>
+  <p class="m-0">
+    <strong>Open Source</strong>: Free to use and actively developed by the community.</p>
+  <p class="m-0">
+    <strong>Plugin Architecture</strong>: Expandable through various plugins, such as those for Java EE, Web Development, and Android Development.</p>
+  <p class="m-0">
+    <strong>Powerful Debugging Tools</strong>: Offers various features for code debugging.</p>
+  <p class="m-0">
+    <strong>Git Integration</strong>: Integrated with the Git version control system.</p>
+  <p class="m-0">
+    <strong>Built-in Build Tools</strong>: Easy build and dependency management through integration with Maven and Gradle.</p>
+</div>
+<div class="nav-content">
+  <h3 style="font-weight: bold;">NetBeans</h3>
+  <p class="m-0">
+    <strong>Open Source</strong>: Free to use and sponsored by Oracle.</p>
+  <p class="m-0">
+    <strong>Modular Architecture</strong>: Modular structure that allows adding or removing features as needed.</p>
+  <p class="m-0">
+    <strong>Java EE Support</strong>: Provides various tools for Java EE application development.</p>
+  <p class="m-0">
+    <strong>Visual GUI Design Tools</strong>: Offers visual tools for GUI application development using Swing and JavaFX.</p>
+  <p class="m-0">
+    <strong>Built-in Build Tools</strong>: Supports Ant, Maven, and Gradle build systems out of the box.</p>
+  <p class="m-0">
+    <strong>Supports Various Languages</strong>: Supports PHP, JavaScript, HTML5, C/C++, and more, in addition to Java.</p>
+</div>
+<div class="nav-content">
+  <h3 style="font-weight: bold;">JDeveloper</h3>
+  <p class="m-0">
+    <strong>Oracle Product</strong>: Developed by Oracle, with excellent integration with Oracle databases and applications.</p>
+  <p class="m-0">
+    <strong>Java EE Support</strong>: Specializes in Java EE and web application development.</p>
+  <p class="m-0">
+    <strong>ADF Support</strong>: Supports Oracle's Application Development Framework, easing enterprise application development.</p>
+  <p class="m-0">
+    <strong>Visual Development Tools</strong>: Allows rapid UI development through visual designers.</p>
+  <p class="m-0">
+    <strong>Database Integration</strong>: Integrated tools for database development and management.</p>
 </div>
 
-<!-- JVM -->
-<div>
-  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1>자바 컴파일과 JVM</h1>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+  <h2 class="post-title">Which IDE Should You Choose?</h2>
+</div>
+<p>With so many IDEs available, the best way to choose the right one is to try them out and see which one suits your development needs best. However, instead of testing all available IDEs, it's recommended to choose one that is widely used by many developers. Popular languages and tools often have extensive resources and communities to help you learn and solve problems.
+  <a href="https://pypl.github.io/IDE.html#google_vignette">PYPL</a>
+  ranks IDEs based on how frequently their download pages are searched on Google. This ranking is also a persuasive indicator of programming language usage trends.</p>
+<div class="row">
+  <div class="col-6">
+    <table class="table" style="font-size: 13px; text-align: center;">
+      <tr class="table-secondary">
+        <th class="py-1">RANK</th>
+        <th class="py-1">IDE</th>
+        <th class="py-1">Share</th>
+        <th class="py-1">1-year trend</th>
+      </tr>
+      <tr>
+        <td class="py-1">1</td>
+        <td class="py-1">Visual Studio</td>
+        <td class="py-1">28.23%</td>
+        <td class="py-1">+0.1%</td>
+      </tr>
+      <tr>
+        <td class="py-1">2</td>
+        <td class="py-1">Visual Studio Code</td>
+        <td class="py-1">13.51%</td>
+        <td class="py-1">-0.5%</td>
+      </tr>
+      <tr>
+        <td class="py-1">3</td>
+        <td class="py-1">Eclipse</td>
+        <td class="py-1">11.66%</td>
+        <td class="py-1">+0.0%</td>
+      </tr>
+      <tr>
+        <td class="py-1">4</td>
+        <td class="py-1">PyCharm</td>
+        <td class="py-1">10.73%</td>
+        <td class="py-1">+2.0%</td>
+      </tr>
+      <tr>
+        <td class="py-1">5</td>
+        <td class="py-1">Android Studio</td>
+        <td class="py-1">9.64%</td>
+        <td class="py-1">+0.6%</td>
+      </tr>
+      <tr>
+        <td class="py-1">6</td>
+        <td class="py-1">IntelliJ</td>
+        <td class="py-1">7.45%</td>
+        <td class="py-1">+0.7%</td>
+      </tr>
+      <tr>
+        <td class="py-1">7</td>
+        <td class="py-1">NetBeans</td>
+        <td class="py-1">4.03%</td>
+        <td class="py-1">-0.4%</td>
+      </tr>
+    </table>
   </div>
-  <h2>컴파일</h2>
-  <p>우리가 작성하는 포르그래밍 코드는 단순한 물리적 형태를 취합니다. 사람이 이해할 수 있는 고수준의 언어는 그 자체로 컴퓨터가 이해할 수 없습니다. 따라서 이를 컴퓨터가 이해할 수 있는 저수준의 언어로 변환할 필요가 있습니다. 이 과정을 컴파일이라고 합니다.</p>
-  <p>자바 프로그램을 실행 가능한 형태로 변환하는 과정은 크게 두 단계로 나눌 수 있습니다: 소스 코드를 바이트 코드로 변환하는 컴파일 단계와 바이트 코드를 실제로 실행하는 단계입니다.</p>
+  <div class="col-6">
+    <canvas class="my-4" id="Chart" style="display: block; box-sizing: border-box; height: 100%; width: auto;"></canvas>
+    <script>
+      const data = {
+        labels: [
+          'Visual Studio',
+          'Visual Studio Code',
+          'Eclipse',
+          'PyCharm',
+          'Android Studio',
+          'IntelliJ',
+          'NetBeans'
+        ],
+        datasets: [
+          {
+            data: [
+              28.23,
+              13.51,
+              11.66,
+              10.73,
+              9.64,
+              7.45,
+              4.03
+            ],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.7)',
+              'rgba(255, 159, 64, 0.7)',
+              'rgba(255, 205, 86, 0.7)',
+              'rgba(75, 192, 192, 0.7)',
+              'rgba(54, 162, 235, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(201, 203, 207, 0.7)'
+            ],
+            borderColor: [
+              'rgb(255, 99, 132)',
+              'rgb(255, 159, 64)',
+              'rgb(255, 205, 86)',
+              'rgb(75, 192, 192)',
+              'rgb(54, 162, 235)',
+              'rgb(153, 102, 255)',
+              'rgb(201, 203, 207)'
+            ],
+            borderWidth: 0
+          }
+        ]
+      };
+      new Chart($('#Chart'), {
+        type: 'doughnut',
+        data: data,
+        options: {
+          legend: {
+            position: 'right'
+          }
+        }
+      });
+    </script>
+  </div>
+</div>
+<p>As of 2024, Eclipse is the most widely used IDE for Java development, but IntelliJ also has a significant share. For Java development, it's recommended to choose between Eclipse and IntelliJ. Let's briefly compare the two IDEs.</p>
+<h3 style="font-weight: bold;">Eclipse IDE vs IntelliJ</h3>
+<table class="table" style="font-size: 13px; text-align: center; vertical-align: middle;">
+  <tr class="table-secondary">
+    <th class="col-2">Category</th>
+    <th>Eclipse</th>
+    <th>IntelliJ IDEA</th>
+  </tr>
+  <tr>
+    <td class="py-1">Code Intelligence</td>
+    <td class="py-1">Offers code completion, syntax highlighting, and code analysis features, but somewhat limited</td>
+    <td class="py-1">Very powerful code completion, code analysis, and refactoring tools, enhancing productivity</td>
+  </tr>
+  <tr>
+    <td class="py-1 px-0">User Interface</td>
+    <td class="py-1">Offers various plugins and features, but initial setup and usage can be complex</td>
+    <td class="py-1">Provides an intuitive and clean interface, easy to use even for beginners</td>
+  </tr>
+  <tr>
+    <td class="py-1 px-0">Plugins and Extensibility</td>
+    <td class="py-1">Supports various languages and frameworks through a vast library of plugins</td>
+    <td class="py-1">Excellent plugin support, seamlessly integrates with various JetBrains tools</td>
+  </tr>
+  <tr>
+    <td class="py-1">Performance</td>
+    <td class="py-1">May be slow due to the large number of features</td>
+    <td class="py-1">Relatively fast performance, smooth operation even with large projects</td>
+  </tr>
+  <tr>
+    <td class="py-1">License</td>
+    <td class="py-1">Free to use as open source</td>
+    <td class="py-1">Free Community version available, Ultimate version requires a commercial license</td>
+  </tr>
+</table>
+</div>
+
+<div>
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+    <h2 class="post-title">Java Compilation and JVM</h2>
+  </div>
+  <h4 style="font-weight: bold;">What is Compilation?</h4>
+  <p>The programming code we write is a high-level language that humans can understand. However, computers cannot understand this code directly. Therefore, it needs to be translated into a low-level language that the computer can understand. This process is known as compilation.</p>
+  <img class="pb-3" src="/assets/img/compile.png" style="width: 100%;">
+  <p>Understanding the compilation process can be complex, but it is important to have a basic understanding to grasp concepts like JVM, memory management, and reference variables. Java also undergoes a compilation process with the following steps:</p>
   <ol>
     <li>
-      <strong>소스 코드 작성</strong>
-      : 먼저 개발자가 코드를 작성합니다. 해당 내용은
-      <code>.java</code>파일로 만들어집니다.</li>
+      <strong>Writing Source Code</strong>: Developers write code and save it as a <code>.java</code> file.
+    </li>
     <li>
-      <strong>컴파일러 호출</strong>
-      : 자바 컴파일러(<code>javac</code>)는 소스 코드를 컴파일합니다.
-      <code>.java</code>는 바이트코드로 구성된
-      <code>.class</code>파일로 변경됩니다.</li>
+      <strong>Invoking the Compiler</strong>: The Java compiler (<code>javac</code>) compiles the source code. The <code>.java</code> file is converted into a <code>.class</code> file containing bytecode.
+    </li>
     <li>
-      <strong>JVM 클래스 로더</strong>
-      : JVM(Java Virtual Machine)의 클래스 로더는 프로그램 실행 시 필요한
-      <code>.class</code>
-      파일을 JVM 메모리에 로드합니다.</li>
+      <strong>JVM Class Loader</strong>: The Class Loader in the Java Virtual Machine (JVM) loads the necessary <code>.class</code> files into JVM memory during program execution.
+    </li>
     <li>
-      <strong>JVM 바이트 코드 검증</strong>
-      : JVM의 바이트 코드 검증기(Bytecode Verifier)는 로드된 바이트 코드가 유효하고 안전한지 검증합니다. 보안을 강화하고 올바르지 않은 바이크 코드를 찾아냅니다.</li>
+      <strong>Bytecode Verification</strong>: The JVM's Bytecode Verifier checks the loaded bytecode to ensure it is valid and safe, enhancing security and identifying invalid bytecode.
+    </li>
     <li>
-      <strong>명령어 실행</strong>
-      : 바이크 코드가 검증되었다면 JVM 메모리에 있는 바이크 코드 명령어들을
-      <strong>실행 엔진</strong>으로 하나씩 가져와 실행합니다. 이때 두 가지 방식을 사용하게 됩니다.
+      <strong>Execution of Instructions</strong>: If the bytecode is verified, the JVM's Execution Engine executes the bytecode instructions. Two methods are used here:
       <ul>
         <li>
-          <strong>인터프리터:</strong>
-          바이트 코드를 한 줄씩 읽어서 즉시 실행합니다. 초기 실행 속도가 빠르지만, 전체 성능은 상대적으로 느릴 수 있습니다.</li>
+          <strong>Interpreter</strong>: Reads and executes bytecode line by line. It is fast to start but may be slower overall.
+        </li>
         <li>
-          <strong>JIT(Just-In-Time) 컴파일러:</strong>
-          자주 사용되는 바이트 코드 부분을 네이티브 머신 코드(컴퓨터가 직접 실행할 수 있는 코드)로 변환합니다. 이 과정은 처음에는 시간이 걸리지만, 이후에는 성능이 매우 향상됩니다.</li>
+          <strong>JIT (Just-In-Time) Compiler</strong>: Converts frequently used bytecode into native machine code. This process takes time initially but significantly improves performance later.
+        </li>
       </ul>
-      <p>인터프리터와 JIT 컴파일러는 함께 작동하여 프로그램을 효율적으로 실행합니다. 처음에는 인터프리터가 코드를 실행하고, 자주 사용되는 부분은 JIT 컴파일러가 네이티브 코드로 변환합니다.</p>
+      <p style="background-color: #dee2e6; font-size: small; border-radius: 5px; padding: 5px;">
+        💡 <strong>The Interpreter</strong> and <strong>JIT Compiler</strong> work together to efficiently execute the program. Initially, the interpreter executes the code, and frequently used parts are then compiled into native code by the JIT compiler.
+      </p>
     </li>
   </ol>
-  <img src="resources/img/java-compile.png">
-  <p>해당 과정은 편하게 자바 코드를 작성하고 실행할 수 있기 때문에 몰라도 상관없습니다. 하지만 좋은 프로그래머가 되기 위해서는 내부 구조가 어떻게 작동되는지 알아야 합니다. 우리가 선언한 변수와 메서드는 어디에 있는지, 어떻게 그 역할을 수행하는지 궁금한 것은 지극히 당연한 일입니다.</p>
-
-  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h2>자바 가상 머신 (Java Virtual Machine, JVM)</h2>
+  <p>Even without knowing these details, we can easily write and run Java code thanks to the work of great programmers and developers who have created and distributed excellent languages and development tools.</p>
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+    <h2 class="post-title">Java Virtual Machine (JVM)</h2>
   </div>
-  <p>컴파일 과정을 설명하며 등장했던 자바 가상 머신(JVM)은 자바 애플리케이션을 실행하기 위한 필수적인 런타임 환경입니다. JVM은 자바 프로그램을 독립적인 환경에서 실행할 수 있게 해주며, 특정 플랫폼에 종속되지 않고 다양한 시스템에서 실행될 수 있도록 합니다.</p>
-
-  <h3>주요 역할</h3>
-  <ul>
-    <li>
-      <strong>바이트코드 실행:</strong>
-      자바 소스 코드(.java 파일)는 자바 컴파일러에 의해 바이트코드(.class 파일)로 변환되며, 이 바이트코드는 JVM에 의해 실행됩니다.</li>
-    <li>
-      <strong>메모리 관리:</strong>
-      JVM은 자바 프로그램의 메모리 할당과 해제를 관리하며, 스택 메모리와 힙 메모리를 관리합니다.</li>
-    <li>
-      <strong>플랫폼 독립성 제공:</strong>
-      자바 프로그램은 한 번 작성하면 어디서나 실행할 수 있습니다("Write Once, Run Anywhere").</li>
-    <li>
-      <strong>런타임 환경 제공:</strong>
-      JVM은 자바 프로그램이 실행되는 동안 필요한 모든 런타임 환경을 제공합니다.</li>
-  </ul>
-
-  <h3>구성 요소</h3>
-  <ul>
-    <li>
-      <strong>클래스 로더 (Class Loader):</strong>
-      자바 클래스 파일을 메모리에 로드하는 역할을 합니다.</li>
-    <li>
-      <strong>실행 엔진 (Execution Engine):</strong>
-      바이트코드를 기계어로 변환하여 실행합니다.</li>
-    <li>
-      <strong>메모리 영역 (Memory Areas):</strong>
-      JVM은 여러 메모리 영역을 관리합니다.</li>
-    <li>
-      <strong>가비지 컬렉터 (Garbage Collector):</strong>
-      더 이상 사용되지 않는 객체를 자동으로 메모리에서 해제합니다.</li>
-    <li>
-      <strong>런타임 데이터 영역 (Runtime Data Area):</strong>
-      자바 프로그램의 실행 중에 필요한 데이터를 저장하는 영역입니다.</li>
-  </ul>
-
-  <h3>동작 과정</h3>
+  <p>The Java Virtual Machine (JVM), mentioned during the compilation process, is a crucial runtime environment for running Java applications. The JVM allows Java programs to run in an independent environment, making them platform-independent and executable on various systems. The components and operation of the JVM are as follows:</p>
+  <h4 style="font-weight: bold;">Components</h4>
+  <div class="row">
+    <div class="col-4">
+      <img class="pb-3" src="/assets/img/jvm.png" style="height: 300px; width:100%; object-fit: contain;">
+    </div>
+    <div class="col-8 p-0">
+      <ul style="list-style-type: none; padding: 2px;">
+        <li class="m-2">
+          <strong>Class Loader:</strong><br>
+          Loads Java class files into memory.
+        </li>
+        <li class="m-2">
+          <strong>Execution Engine:</strong><br>
+          Converts bytecode into machine code and executes it.
+        </li>
+        <li class="m-2">
+          <strong>Memory Areas:</strong><br>
+          Manages various memory areas within the JVM.
+        </li>
+        <li class="m-2">
+          <strong>Garbage Collector:</strong><br>
+          Automatically releases memory by removing unused objects.
+        </li>
+        <li class="m-2">
+          <strong>Runtime Data Area:</strong><br>
+          Stores data required during the execution of Java programs.
+        </li>
+      </ul>
+    </div>
+  </div>
+  <h4 style="font-weight: bold;">Operation Process</h4>
   <ol>
     <li>
-      <strong>클래스 로딩:</strong>
-      클래스 로더는 자바 클래스 파일을 로드하고 메모리에 배치합니다.</li>
+      <strong>Class Loading:</strong>
+      The Class Loader loads Java class files and places them in memory.
+    </li>
     <li>
-      <strong>바이트코드 검증:</strong>
-      로드된 클래스 파일이 자바 언어 명세와 JVM 명세에 맞는지 검증합니다.</li>
+      <strong>Bytecode Verification:</strong>
+      Verifies that the loaded class files conform to the Java language and JVM specifications.
+    </li>
     <li>
-      <strong>메모리 할당:</strong>
-      객체를 생성하고 힙 메모리에 할당합니다.</li>
+      <strong>Memory Allocation:</strong>
+      Creates objects and allocates them in the heap memory.
+    </li>
     <li>
-      <strong>바이트코드 실행:</strong>
-      실행 엔진은 바이트코드를 해석하고, JIT 컴파일러가 성능을 최적화하여 실행합니다.</li>
+      <strong>Bytecode Execution:</strong>
+      The Execution Engine interprets and executes the bytecode, with the JIT compiler optimizing performance.
+    </li>
     <li>
-      <strong>가비지 컬렉션:</strong>
-      주기적으로 힙 메모리를 검사하여 더 이상 참조되지 않는 객체를 식별하고 메모리를 회수합니다.</li>
+      <strong>Garbage Collection:</strong>
+      Periodically examines the heap memory to identify and reclaim memory from objects that are no longer referenced.
+    </li>
   </ol>
-  <p>JVM은 자바 프로그램을 실행하기 위한 핵심 기술로, 자바의 플랫폼 독립성과 보안성을 실현하는 데 중요한 역할을 합니다. 최근의 발전과 프로젝트들을 통해 성능과 기능 면에서 계속해서 발전해 나가고 있으며, 앞으로도 더 많은 혁신을 기대할 수 있습니다.</p>
-
-</div>
+  <p>The JVM is a core technology for running Java programs, playing a crucial role in achieving Java's platform independence and security. Continuous advancements and projects are enhancing its performance and features, promising further innovations in the future.</p>
+  </div>

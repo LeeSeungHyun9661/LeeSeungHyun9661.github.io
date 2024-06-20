@@ -26,11 +26,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet"/>
 
     <!-- Web Icons -->
-    <link rel="icon" href="assets/img/raccoon-32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="assets/img/raccoon-16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="/assets/img/raccoon-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/assets/img/raccoon-16.png" sizes="16x16" type="image/png">
     <link rel="manifest" href="https://getbootstrap.kr/docs/5.3/assets/img/favicons/manifest.json">
     <link rel="mask-icon" href="https://getbootstrap.kr/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-    <link rel="icon" href="assets/img/raccoon.ico">
+    <link rel="icon" href="/assets/img/raccoon.ico">
 
     <!-- highlight.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
@@ -39,7 +39,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
 
     <!-- 코드 구문 강조 호출 -->
-    <script> hljs.highlightAll(); </script>
+    <script>
+      hljs.highlightAll();
+    </script>
   </head>
 
   <body style="width: 100%;">
@@ -56,7 +58,7 @@
         <div class="posting">
           <!-- 본문 상단부 -->
           <div class="hstack gap-3">
-            <div class="p-2" style="font-size: 35px; font-weight:600;">Title</div>
+            <div class="p-2" style="font-size: 35px; font-weight:600;">Basic</div>
             <div class="p-2 ms-auto"></div>
             <div class="p-2">
               <!-- 언어 선택 버튼 -->
@@ -71,14 +73,29 @@
             </div>
           </div>
 
-          <div class="contents">   
-          </div>
+          <div class="contents"></div>
         </div>
       </main>
     </div>
     <!-- blog.js -->
     <script src="/js/blog.js"></script>
-    <script type="text/javascript">loadContents("basic.html");</script>
+    <script type="text/javascript">
+      loadContents("basic.html");
+
+      $(function () {
+        $(".nav-link").click(function () {
+          $(".nav-link").removeClass("active");
+          $(this).addClass("active");
+        });
+        $(".nav-link:first").addClass("active")
+        $('.nav-content:eq(0)').css('display', "block")
+
+      });
+      function changeNav(number) {
+        $('.nav-content').css('display', "none")
+        $('.nav-content:eq(' + number + ')').css('display', "block")
+      }
+    </script>
 
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
