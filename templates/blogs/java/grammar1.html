@@ -39,6 +39,9 @@
     <script>
       hljs.highlightAll();
     </script>
+    <style>
+    </style>
+
   </head>
 
   <body style="width: 100%;">
@@ -53,10 +56,9 @@
         <!-- 본문 부분 -->
         <div class="posting">
           <!-- 본문 상단부 -->
-          <div class="hstack gap-3">
-            <div class="p-2" style="font-size: 35px; font-weight:600;">Title</div>
-            <div class="p-2 ms-auto"></div>
-            <div class="p-2">
+          <div class="hstack gap-0">
+            <p class="p-2 m-0" style="font-size: 50px; font-weight:600;	margin-bottom: 0;">Grammar(1)<span style="font-size: 20px; vertical-align: text-bottom;"> </span></p>            
+            <div class="p-2 ms-auto">
               <!-- 언어 선택 버튼 -->
               <select class="form-select form-select-sm" aria-label="Small select example" onchange="languageChange()" id="lang">
                 <option value="KR">
@@ -66,19 +68,17 @@
                   EN
                 </option>
               </select>
-            </div>
+            </div>            
           </div>
-
           <div class="contents" style="display: none;"></div>
         </div>
       </main>
-
     </div>
     <!-- blog.js -->
     <script src="/js/blog.js"></script>
     <script type="text/javascript">
+      loadContents("grammar1.html");
       window.addEventListener('load', function () {
-        loadContents("grammar1.html");
       })
     </script>
 

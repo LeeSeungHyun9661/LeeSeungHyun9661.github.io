@@ -139,3 +139,12 @@ ul{
    filter: drop-shadow(10px 6px 6px #0e0e0e); /*그림자*/
    transform: translateY(-50%);
  }
+
+.tp-text{
+   display: -webkit-box;
+   font-size: 1.4vh; 
+   word-break:break-word;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 2;
+   overflow: hidden;
+}

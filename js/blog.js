@@ -33,3 +33,7 @@ function languageChange() {
    localStorage.setItem("lang", $("#lang").val());
    location.reload(true);   
 }
+
+
+
+hljs.highlightAll();

@@ -58,7 +58,7 @@
         <div class="posting">
           <!-- 본문 상단부 -->
           <div class="hstack gap-3">
-            <div class="p-2" style="font-size: 35px; font-weight:600;">Basic</div>
+            <div class="p-2" style="font-size: 50px; font-weight:600;	margin-bottom: 0;">Basic</div>
             <div class="p-2 ms-auto"></div>
             <div class="p-2">
               <!-- 언어 선택 버튼 -->
@@ -79,18 +79,17 @@
     </div>
     <!-- blog.js -->
     <script src="/js/blog.js"></script>
-    <script type="text/javascript">
-      loadContents("basic.html");
-
+    <script type="text/javascript"> 
+      loadContents("basic.html");     
       $(function () {
         $(".nav-link").click(function () {
           $(".nav-link").removeClass("active");
           $(this).addClass("active");
-        });
-        $(".nav-link:first").addClass("active")
-        $('.nav-content:eq(0)').css('display', "block")
-
+        });        
+        $(".nav-link:first").addClass("active");
+        $('.nav-content:eq(0)').css('display', "block");
       });
+
       function changeNav(number) {
         $('.nav-content').css('display', "none")
         $('.nav-content:eq(' + number + ')').css('display', "block")
