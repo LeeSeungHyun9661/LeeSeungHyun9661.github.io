@@ -1,0 +1,441 @@
+<!-- 기초 문법 -->
+<div class="hstack gap-0" style="background-color: #dee2e6;">
+  <div class="p-2 ms-auto" style="font-size: 15px;">
+    <strong>편집 일자</strong>: 2024년 6월
+  </div>
+</div>
+<p>Java의 객체 지향 개발의 5대 원칙인 SOLID는 유지 보수를 쉽도록 하고 코드의 확장성과 재사용성 향상을 목표로 합니다. Java SOLID 원칙은 다음과 같은 다섯 개의 세부 원칙을 포함합니다.</p>
+
+<table class="table table-bordered" border="1" cellpadding="5" cellspacing="0" style="font-size: 13px;">
+  <tbody>
+    <tr>
+      <td>S</td>
+      <td>Single Responsibility</td>
+      <td>단일 책임 원칙</td>
+      <td>하나의 클래스는 하나의 책임만</td>
+    </tr>
+    <tr>
+      <td>O</td>
+      <td>Open for Extension, Closed for Modification</td>
+      <td>개방 폐쇠 원칙</td>
+      <td>확장에 열려있고 변경에 닫혀있다.</td>
+    </tr>
+    <tr>
+      <td>L</td>
+      <td>Liskov Substitution Principle</td>
+      <td>리스코프 치환 원리</td>
+      <td>하위 타입이 상위 타입을 대체 가능</td>
+    </tr>
+    <tr>
+      <td>I</td>
+      <td>Interface Segregation Principle</td>
+      <td>인터페이스 분리</td>
+      <td>목적과 용도에 적합한 인터페이스 제공</td>
+    </tr>
+    <tr>
+      <td>D</td>
+      <td>Dependency Inversion Principle</td>
+      <td>의존 역전 원칙</td>
+      <td>저수준 모듈이 고수준 모듈에 의존</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+  <h2 class="post-title">Single Responsibility Principle (단일 책임 원칙)</h2>
+</div>
+<p>
+  "한 클래스는 하나의 책임만 가진다." 단 하나의 작업을 행해야 하고 이는 곧 하나의 변화 이유만 가지는 것을 의미합니다. 관련 없는 행위나 너무 많은 객체를 가지는 것은 유지 보수에 좋지 않습니다. 따라서 클래스가 가진 기능을 분리하여 책임을 분산하고 기능 변경에 따른 영향을 줄여야 합니다. 결과적으로 결합도를 낮추고 응집도를 높히는 결과를 가져오게 됩니다.
+</p>
+
+<div class="row">
+  <div class="col-6">
+    <pre><code class="language-java">// 도서 데이터 클래스
+class book {
+   private string title;
+   private string author;
+   private string txt;
+
+   // 생성자, 게터, 세터...
+
+   public void printbook() {
+      // 도서 출력 기능
+   }    
+
+   public void fixbook() {
+      // 도서 내용 수정 기능
+   }
+}
+ 
+
+</code></pre>
+  </div>
+  <div class="col-6">
+    <pre><code class="language-java">class bookeditor {
+   public void fixbook() {
+      // 도서 내용 수정 기능
+   }
+}
+  
+class bookprinter {
+   public void printbook() {
+      // 도서 출력 기능
+   }
+}
+  
+class book {
+  private string title;
+  private string author;
+  private string txt;  
+  // 생성자, 게터, 세터...
+}</code></pre>
+  </div>
+</div>
+<p>
+  우측의 코드는
+  <code>book</code>
+  클래스가 도서 출력과 도서 수정 두 가지 기능을 모두 담당하고 있습니다. 이는 단일 책임 원칙에 어긋나며, 유지 보수가 어려울 수 있습니다. 좌측 코드와 같이 기능을 분리하여 각 클래스가 하나의 책임만을 갖도록 리팩토링하는 것이 바람직합니다.
+</p>
+
+<p>
+  단일 책임 원칙을 준수하며 기능을 분할하면 수정이 필요한 지점을 명확하게 찾아낼 수 있습니다. 예를 들어 출력 기능에 변화가 필요하면
+  <code>BookPrinter</code>클래스에서 기능을 찾아 수정하면 됩니다. 따라서 동일 코드에 영향을 많이 주지 않고 변화에 유연하게 대처할 수 있어 유지 보수에 많은 도움이 됩니다.
+</p>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+  <h2 class="post-title">Open-Closed Principle (개방 폐쇠 정책)</h2>
+</div>
+
+<p>
+  확장에는 열려있고 수정에는 닫혀있어야 한다는 원리입니다. 각 원칙은 새로운 기능의 추가에 따라 기존 기능에 수정을 하지 않고 유연하게 코드를 추가할 수 있음을 의미합니다. 정리하자면
+  <strong>새로운 기능을 추가할 때 원래 코드와 기능은 변경을 최소화</strong>함을 의미합니다.
+</p>
+
+<pre><code class="language-java">// 도서 타입에 따른 위치를 출력하는 클래스
+class booklocationprinter{
+   public void findbook(book book){
+      if(book.gettype().equals("novel")){
+         //소설의 위치 출력
+      }else if(book.gettype().equals("dictionary")){
+         //사전의 위치 출력			
+      }else{
+         ...
+      }
+   }
+}
+
+class book {
+   private string type;
+   // 생성자와 게터, 세터
+   
+   public book(string type){
+      this.type= type;
+   }
+
+   public string gettype() {
+      return this.type;
+   }
+}
+
+public class main {
+   public static void main(string[] args) {
+         booklocationprinter printer = new booklocationprinter();
+
+       book novel = new book("novel");
+       book dictionary = new book("dictionary");
+       
+       printer.findbook(novel);
+       printer.findbook(dictionary );
+   }
+}</code></pre>
+<p>앞서 구현한 
+   <code>Book</code>클래스에
+  <strong>도서 타입에 따라 도서 위치 번호를 출력하는 기능</strong>을 추가했습니다.</p>
+<p>따라서 도서 타입으로 생성된 Book 객체는 타입 값의 종류에 따라 도서 위치를 출력할 것입니다. 여기까지는 문제가 없습니다. 하지만 도서의 종류가 늘어난다고 해봅시다. 이 구조를 유지한다면 <code>if else</code>는 계속 늘어날 것이고 코드는 복잡해 질 것입니다. 계속해서 원래 코드를 수정해야 합니다. 따라서 다음과 같이 수정해야 할 필요가 있습니다.</p>
+
+<pre><code class="language-java">// 도서 타입에 따른 위치를 출력하는 클래스
+class booklocationprinter{
+   public void findbook(book book){
+      book.location();
+   }
+}
+
+// book을 상속받는 dictionary 클래스
+class dictionary  extends book { // 상속
+      void location() {
+         // 사전의 위치 출력
+      }
+}
+// book을 상속받는 novel 클래스
+class novel extends book { // 상속
+      void location() {
+         // 소설의 위치 출력
+      }
+}
+
+class book {
+   private string type;
+   // 생성자와 게터, 세터
+   
+   public book(string type){
+      this.type= type;
+   }
+   
+   abstract void location();
+   //인터페이스 함수
+   
+   public string gettype() {
+      return this.type;
+   }
+}
+
+class book {
+   private string type;
+   // 생성자와 게터, 세터
+   
+   public book(string type){
+      this.type= type;
+   }
+
+   public string gettype() {
+      return this.type;
+   }
+}
+
+public class main {
+   public static void main(string[] args) {
+      booklocationprinter printer = new booklocationprinter();
+
+      book novel = new novel("novel");
+      book dictionary = new dictionary("dictionary");
+
+      printer.findbook(novel);
+      printer.findbook(dictionary);
+   }
+}</code></pre>
+<p>기존의 Book 클래스를 인터페이스 클래스로 변경했습니다. 그리고 특정한 종류의 도서는 Book클래스를 상속 받고, 위치 출력 함수를 정의하도록 구성되었습니다. 이제 새로운 종류의 도서가 추가되어도 기존 클래스<code>BookLocationPrinter</code>를 수정할 필요가 없습니다!</p>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+  <h2 class="post-title">Liskov Substitution Principle (리스코프 치환 원리)</h2>
+</div>
+<p>리스코프 치환 원리는 1988년 바바라 리스코프가 발표한 개념으로
+  <strong>하위 타입은 상위 타입을 대체할 수 있어야 한다</strong>는 원리입니다. 여기서 하위 타입은 자식 클래스 상위 타입은 부모 클래스에 해당합니다. 즉 부모 클래스 객체를 자식 클래스 객체로 교환해도 문제가 없도록 구조를 만들어야 한다는 의미입니다.</p>
+<pre><code class="language-java">class book {
+	private string title;	
+	// 생성자와 게터, 세터
+}
+
+class ebook extends book{	
+	void download() {
+		// 파일 다운로드 기능
+	}
+}
+   
+public class main {
+	public static void main(string[] args) {	
+		book ebook = new ebook ();
+		ebook.download();
+	}
+}</code></pre>
+<p>
+  <code>EBook</code>클래스는
+  <code>Book</code>
+  클래스를 상속 받기 때문에 부모클래스를 통해서도 선언이 가능하지만
+  <code>download()</code>
+  함수는 정의되어있지 않습니다. 때문에 명백한 모순이 발생합니다. 상위 타입이 하위 타입을 대신할 수 없음을 의미합니다! 이는 리스코프 치환 원칙을 위반하기 때문에 적절하지 않은 구현 방법이라고 할 수 있습니다. 상위 타입을 하위 타입으로 치환하는 과정에서 개발자의 의도와 다르게 동작할 수 있기 때문입니다. 해당 예시와 같이 상위 타입이 하위 타입과 적절하게 호환되게 하기 위한 방법은 다음과 같은 방법들이 있습니다.
+</p>
+<ul>
+   <li>
+      <strong>부모 클래스에 함수를 추가한다.</strong>
+<pre><code class="language-java">class book {
+   private string title;	
+   // 생성자와 게터, 세터
+}
+
+class ebook extends book{	
+   void download() {
+      // 파일 다운로드 기능
+   }
+}
+   
+public class main {
+   public static void main(string[] args) {	
+      book ebook = new ebook ();
+      ebook.download();
+   }
+}</code></pre>
+        <p>다음과 같이 모순이 발생하는 함수
+          <code>download()</code>를 부모 클래스에 정의하는 방법입니다. 이후 자식 클래스에서는 해당 함수를 오버라이딩을 통해 원하는 결과가 나타나도록 변화 시킵니다.</p>
+   </li>
+   <li>
+      <strong>인터페이스 활용</strong>
+      <pre><code class="language-java">interface downloadable {
+   void download();
+}
+
+class book {
+   private string title;	
+   // 생성자와 게터, 세터
+}
+
+class ebook extends book implements downloadable{	
+   public void download() {
+      // ebook 다운로드 기능
+   }
+}
+public class main {
+   public static void main(string[] args) {	
+      book ebook = new ebook ();
+      if (ebook instanceof downloadable) {
+         downloadable downloadable = (downloadable) ebook ;
+         downloadable.download()
+      }
+   }
+}</code></pre>
+      <p>인터페이스를 사용하여 특정 기능을 명확히 분리하는 방법입니다. 자식 클래스는 인터페이스를 구현하여 추가적인 기능을 제공할 수 있습니다. 이를 통해 해당 객체가 인터페이스를 구현했는지 확인하고 업캐스팅을 통해 구현을 가능하게 합니다.</p>
+   </li>
+   <li>
+      <strong>업캐스팅</strong>
+        <pre><code class="language-java">class book {
+   private string title;
+   // 생성자와 게터, 세터
+}
+class ebook extends book {
+   public void download() {
+      // ebook 다운로드 기능
+   }
+}
+
+public class main {
+   public static void main(string[] args) {
+      book book = new ebook();
+      if (book instanceof ebook) {
+         ebook ebook = (ebook) book; // 업캐스팅
+         ebook.download();
+      }
+   }
+}</code></pre>
+        <p>업캐스팅을 사용하여 부모 클래스 타입으로 자식 클래스를 참조하되, 특정 기능이 필요할 때 타입 검사를 통해 자식 클래스의 메서드를 호출하는 방법입니다.</p>
+   </li>
+</ul>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+  <h2 class="post-title">Interface Segregation Principle (인터페이스 분리 원칙)</h2>
+</div>
+<p>인터페이스 분리 원칙은 <strong>자신이 이용하지 않는 메서드에 의존하지 않아야 한다는 원칙</strong>입니다. 인터페이스는 클래스를 위한 틀로 사용되지만 너무 많은 기능을 가진 단일 인터페이스를 활용할 경우, 이를 사용하는 클래스가 필요 없는 기능을 받을 수도 있습니다.</p>
+<pre><code class="language-java">// 도서의 기능을 정의하는 인터페이스
+interface BookActions {
+   String read();
+   String download();
+   String bookmark();
+}
+
+// 도서 클래스
+class Book implements BookActions {
+   protected String title;
+   protected String author;
+
+   public Book(String title, String author) {
+      this.title = title;
+      this.author = author;
+   }
+   @Override
+   public String read() { //읽기 기능  
+   }
+   @Override
+   public String download() { //다운로드 기능 - 구현 필요 x  
+   }
+   @Override
+   public String bookmark() { //북마크 기능       
+   }
+}
+
+// 전자도서 클래스
+class eBook extends Book { //읽기 기능  
+   public eBook(String title, String author) {
+      super(title, author);
+   }
+   @Override
+   public String read() { //읽기 기능 
+   }
+   @Override
+   public String download() { //다운로드 기능 
+   }
+   @Override
+   public String bookmark() { //북마크 기능
+   }
+}</code></pre>
+<p><code>BookActions</code> 는 인터페이스로 많은 기능을 포함하고 있습니다. 이를 활용하는 <code>Book</code> 클래스에는 필요 없는 기능인 <code>download()</code> 도 포함하게 됩니다. 모든 클래스가 불필요한 기능을 가질 필요는 없습니다. 인터페이스를 작게 자르더라도 여러 인터페이스를 활용할 수 있기 때문이죠!</p>
+<pre><code class="language-java">// 책 읽기 기능을 제공하는 인터페이스
+interface Readable {
+   String read();
+}
+
+// 다운로드 기능을 제공하는 인터페이스
+interface Downloadable {
+   String download();
+}
+
+// 책에 북마크 기능을 제공하는 인터페이스
+interface Bookmarkable {
+   String bookmark();
+}
+
+// 도서 클래스
+class Book implements Readable, Bookmarkable {
+...
+}
+
+// 전자도서 클래스
+class eBook extends Book implements Downloadable{ //읽기 기능  
+   ...
+}</code></pre>
+<p>  
+   <code>BookActions</code>  를 분리했습니다. 분리된 기능으로 인해 필요한 인터페이스 함수만 구현하는 것을 통해 인터페이스 분리 원칙을 준수할 수 있습니다.
+</p>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+  <h2 class="post-title">Dependency Inversion Principle (의존성 역전 원리)</h2>
+</div>
+<p>의존성 역전 원리란 다른 클래스를 참조할 때 클래스의 상위 요소를 통해 참조하는 것을 의미합니다. 다시 말해 추상성이 더 높은 클래스, 즉 추상 클래스나 인터페이스를 통해 참조하는 것입니다. </p>
+<pre><code class="language-java">List<String> myList = new ArrayList()<>;    
+Set<String> mySet = new HashSet()<>;
+Map<int, String> myMap = new HashMap()<>;</code></pre>
+<p>가장 처음 의존성 역전 원리를 적용하게 되는 시점은 처음 <code>Collection</code>을 사용할 때입니다. 다음과 같이 <code>ArrayList</code>나 <code>HashSet</code>을 선언할 때 같은 자료형이 아니라 <code>List</code>나 <code>Set</code>과 같은 더 상위의 인터페이스 타입을 선언합니다. 이러한 선언에는 다음과 같은 이유가 있습니다.</p>
+
+<pre><code class="language-java">// 저수준의 모듈
+class Child{
+   ...
+}
+// 고수준의 모듈
+class Parents{
+	private Child child;
+	public Parents(Child child){
+		// Child 클래스에 대한 직접 참조
+		this.child = child
+	}	
+}</code></pre>
+<p>고수준의 <code>Parents</code>클래스 모듈은 저수준의 <code>Child</code>클래스 모듈을 참조하여 받아야 하며 이는 직접적인 의존에 해당합니다.</p>
+<p>Parents클래스를 수정하는 과정에서 참조하는 <code>Child</code>클래스에 새로운 기능을 가지도록 바꾸어야 한다면 어떨까요? 기존의 <code>Child</code>클래스를 수정한다면 이 클래스와 연결된 다른 모든 대상이 영향을 받을 것입니다. 따라서 <code>NewChild</code>를 새로 만든 후 변경 사항을 모두 직접 수정해야 할 것입니다. 이러한 상황을 예방하기 위해서 다음과 같이 수정할 수 있습니다.</p>
+<pre><code class="language-java">// 공통의 인터페이스
+interface Human{}
+
+class Child implements Human{
+   ...
+}
+
+class NewChild implements Human{
+   ...
+}
+// 고수준의 모듈
+class Parents{
+	private Human child;
+	public Parents(Human child){
+		// Child 클래스에 대한 직접 참조
+		this.child = child
+	}	
+}</code></pre>
+<p>저수준의 모듈이 공유할 수 있는 인터페이스 <code>Human</code>을 만들었고 <code>Child</code>가 이를 상속 받도록 했습니다. 이제 <code>Parents</code>클래스가 인터페이스인 <code>Human</code>을 전달 받도록 한다면 <code>Child</code>를 사용할 수도 있지만 필요에 따라 <code>NewChild</code>를 사용할 수도 있습니다. 만약 새로운 클래스가 필요하다면 간단하게 동일한 인터페이스를 상속 받도록 하는 것으로 의존 관계를 단순화할 수 있습니다.</p>
+<p>정리하자면 저수준의 모듈을 사용할 때 직접 사용하지 말고 해당 모듈이 구현하고 있는 <strong>상위의 인터페이스에 의존함으로써 유연성을 증가시키고 결합도를 낮추는 것</strong>
+이 의존성 역전 원리의 핵심입니다.</p>
+

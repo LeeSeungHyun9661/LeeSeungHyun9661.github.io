@@ -1,0 +1,566 @@
+<!-- Basic Syntax -->
+<div class="hstack gap-0" style="background-color: #dee2e6;">
+  <div class="p-2 ms-auto" style="font-size: 15px;">
+    <strong>Last edited</strong>: June 2024
+  </div>
+</div>
+<p>The five principles of object-oriented design in Java, known as SOLID, aim to enhance maintainability, scalability, and reusability of code. Java SOLID principles include the following five detailed principles:</p>
+
+<table class="table table-bordered" border="1" cellpadding="5" cellspacing="0" style="font-size: 13px;">
+  <tbody>
+    <tr>
+      <td>S</td>
+      <td>Single Responsibility</td>
+      <td>Single Responsibility Principle</td>
+      <td>A class should have only one reason to change.</td>
+    </tr>
+    <tr>
+      <td>O</td>
+      <td>Open for Extension, Closed for Modification</td>
+      <td>Open/Closed Principle</td>
+      <td>Software entities (classes, modules, functions) should be open for extension, but closed for modification.</td>
+    </tr>
+    <tr>
+      <td>L</td>
+      <td>Liskov Substitution Principle</td>
+      <td>Liskov Substitution Principle</td>
+      <td>Subtypes must be substitutable for their base types without altering the correctness of the program.</td>
+    </tr>
+    <tr>
+      <td>I</td>
+      <td>Interface Segregation Principle</td>
+      <td>Interface Segregation Principle</td>
+      <td>Clients should not be forced to depend on interfaces they do not use.</td>
+    </tr>
+    <tr>
+      <td>D</td>
+      <td>Dependency Inversion Principle</td>
+      <td>Dependency Inversion Principle</td>
+      <td>High-level modules should not depend on low-level modules. Both should depend on abstractions.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+  <h2 class="post-title">Single Responsibility Principle</h2>
+</div>
+<p>
+  "A class should have only one reason to change." It means that a class should have only one job to do and therefore only one reason to change. Having unrelated functions or too many objects within a class is detrimental to maintainability. Thus, responsibilities should be separated among classes to distribute responsibilities and minimize the impact of changes in functionality. This ultimately reduces coupling and increases cohesion.
+</p>
+
+<div class="row">
+  <div class="col-6">
+    <pre><code class="language-java">// book data class
+ class book {
+    private string title;
+    private string author;
+    private string text;
+ 
+    // constructor, getters, setters...
+ 
+    public void printbook() {
+       // book printing functionality
+    }    
+ 
+    public void fixbook() {
+       // book content fixing functionality
+    }
+ }
+  
+ 
+ </code></pre>
+  </div>
+  <div class="col-6">
+    <pre><code class="language-java">class bookeditor {
+    public void fixbook() {
+       // book content fixing functionality
+    }
+ }
+   
+ class bookprinter {
+    public void printbook() {
+       // book printing functionality
+    }
+ }
+   
+ class book {
+   private string title;
+   private string author;
+   private string text;  
+   // constructor, getters, setters...
+ }</code></pre>
+  </div>
+</div>
+<p>
+  The code on the right shows the
+  <code>Book</code>
+  class handling both book printing and book fixing functionalities, violating the Single Responsibility Principle and potentially making maintenance difficult. Refactoring to separate responsibilities as shown on the left is desirable.
+</p>
+
+<p>
+  By adhering to the Single Responsibility Principle and splitting functionalities, you can clearly identify points where changes are needed. For instance, if there's a need to change the printing functionality, you would modify it within the
+  <code>BookPrinter</code>
+  class. This allows you to adapt flexibly to changes without affecting other parts of the code significantly, thus greatly aiding in maintenance.
+</p>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+  <h2 class="post-title">Open-Closed Principle</h2>
+</div>
+
+<p>
+  The Open-Closed Principle states that software entities (classes, modules, functions) should be open for extension but closed for modification. Each principle implies that new features can be added without altering existing code and functionalities, allowing flexibility in code addition while minimizing changes to original code and features.
+</p>
+
+<pre><code class="language-java">// class to print book locations based on book type
+ class booklocationprinter {
+    public void findbook(book book) {
+       book.location();
+    }
+ }
+ 
+ // dictionary class inheriting from book
+ class dictionary extends book {
+    public dictionary(string type) {
+       super(type);
+    }
+ 
+    public void location() {
+       // print location of dictionary
+    }
+ }
+ 
+ // novel class inheriting from book
+ class novel extends book {
+    public novel(string type) {
+       super(type);
+    }
+ 
+    public void location() {
+       // print location of novel
+    }
+ }
+ 
+ // abstract class book with type and location methods
+ abstract class book {
+    private string type;
+ 
+    public book(string type) {
+       this.type = type;
+    }
+ 
+    public string gettype() {
+       return this.type;
+    }
+ 
+    // abstract method for location
+    abstract void location();
+ }
+ 
+ public class main {
+    public static void main(string[] args) {
+       booklocationprinter printer = new booklocationprinter();
+ 
+       book novel = new novel("novel");
+       book dictionary = new dictionary("dictionary");
+ 
+       printer.findbook(novel);
+       printer.findbook(dictionary);
+    }
+ }</code></pre>
+
+<p>
+  Previously implemented functionality added a feature to
+  <code>Book</code>
+  class for printing book locations based on book type.
+</p>
+
+<p>
+  Therefore, Book objects created with a book type will print the book location according to the type. Initially, there is no problem. But let's say the type of book increases. The
+  <code>if else</code>
+  will continue to increase and the code will become more complicated. You need to continue to modify the original code. Therefore, the need for revision is as follows:</p>
+
+<pre><code class="language-java">// class to print book locations based on book type
+class booklocationprinter {
+   public void findbook(book book) {
+      book.location();
+   }
+}
+
+// dictionary class inheriting from book
+class dictionary extends book {
+   public dictionary(string type) {
+      super(type);
+   }
+
+   @override
+   void location() {
+      // print location of dictionary
+      system.out.println("location of dictionary");
+   }
+}
+
+// novel class inheriting from book
+class novel extends book {
+   public novel(string type) {
+      super(type);
+   }
+
+   @override
+   void location() {
+      // print location of novel
+      system.out.println("location of novel");
+   }
+}
+
+// abstract class book with type and location methods
+abstract class book {
+   private string type;
+
+   public book(string type) {
+      this.type = type;
+   }
+
+   public string gettype() {
+      return this.type;
+   }
+
+   // abstract method for location
+   abstract void location();
+}
+
+public class main {
+   public static void main(string[] args) {
+      booklocationprinter printer = new booklocationprinter();
+
+      book novel = new novel("novel");
+      book dictionary = new dictionary("dictionary");
+
+      printer.findbook(novel);
+      printer.findbook(dictionary);
+   }
+}</code></pre>
+
+<p>
+  The existing Book class has been refactored into an abstract class to serve as an interface, with specific types of books inheriting from it and defining their own location printing methods. Now, even if new types of books are added, there is no need to modify the existing BookLocationPrinter class!
+</p>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+  <h2 class="post-title">Liskov Substitution Principle</h2>
+</div>
+
+<p>
+  The Liskov Substitution Principle, introduced by Barbara Liskov in 1988, states that "objects of a superclass shall be replaceable with objects of its subclasses without affecting the functionality." This means that subclasses should be able to substitute their parent classes without any issues, ensuring that the behavior remains consistent across all instances.
+</p>
+
+<pre><code class="language-java">class book {
+   private string title;
+   // constructors, getters, setters
+}
+ 
+class ebook extends book {
+   void download() {
+      // download file functionality
+   }
+}
+ 
+public class main {
+   public static void main(string[] args) {
+      book ebook = new ebook();
+      // compile-time error, violates liskov substitution principle
+      ((ebook) ebook).download(); 
+   }
+}</code></pre>
+
+<p>
+  The
+  <code>Ebook</code>
+  class inherits from the
+  <code>Book</code>
+  class, allowing instances to be declared through the parent class. However, the
+  <code>download()</code>
+  method is not defined in the parent class, leading to a clear contradiction. This violates the Liskov Substitution Principle, as it indicates that the superclass cannot properly substitute the subclass! Such implementation is not appropriate because it may cause unexpected behavior when substituting the superclass with its subclass during runtime.
+</p>
+
+<p>
+  To ensure proper compatibility where a superclass can be replaced by its subclass, consider the following approaches:
+</p>
+
+<ul>
+  <li>
+    <strong>Add the function to the parent class:</strong>
+    <pre><code class="language-java">class book {
+   private string title;
+   // constructors, getters, setters
+   
+   void download() {
+      // download functionality defined in parent class
+   }
+}
+
+class ebook extends book {
+   // no need to redefine download() method here
+}
+
+public class main {
+   public static void main(string[] args) {
+      book ebook = new ebook();
+      ebook.download(); // properly invokes download() from parent class
+   }
+}</code></pre>
+    <p>Define the conflicting function,
+      <code>download()</code>, in the parent class, and then override it in the subclass as needed to achieve the desired results.</p>
+  </li>
+
+  <li>
+    <strong>Utilize interfaces:</strong>
+   <pre><code class="language-java">interface downloadable {
+   void download();
+}
+
+class book {
+   private string title;
+   // constructors, getters, setters
+}
+
+class ebook extends book implements downloadable {
+   public void download() {
+      // ebook download functionality
+   }
+}
+
+public class main {
+   public static void main(string[] args) {
+      book ebook = new ebook();
+      if (ebook instanceof downloadable) {
+            downloadable downloadable = (downloadable) ebook;
+            downloadable.download();
+      }
+   }
+}</code></pre>
+    <p>Use interfaces to clearly separate specific functionalities. Subclasses can implement interfaces to provide additional functionality. This allows checking whether the object implements the interface, enabling upcasting to perform the implementation.</p>
+  </li>
+
+  <li>
+    <strong>Upcasting:</strong>
+   <pre><code class="language-java">class book {
+   private string title;
+   // constructors, getters, setters
+}
+
+class ebook extends book {
+   public void download() {
+      // ebook download functionality
+   }
+}
+
+public class main {
+   public static void main(string[] args) {
+      book book = new ebook();
+      if (book instanceof ebook) {
+            ebook ebook = (ebook) book; // upcasting
+            ebook.download();
+      }
+   }
+}</code></pre>
+    <p>Use upcasting to refer to a subclass object using a superclass type and utilize type checking to call the methods of the subclass when specific functionalities are required.</p>
+  </li>
+</ul>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+  <h2 class="post-title">Interface Segregation Principle</h2>
+</div>
+
+<p>
+  The Interface Segregation Principle states that a client should not be forced to depend on methods it does not use. When an interface becomes too large and includes more functionalities than a class needs, implementing classes might end up with unnecessary methods that they do not require.
+</p>
+
+<pre><code class="language-java">// interface defining book functionalities
+interface bookactions {
+   string read();
+   string download();
+   string bookmark();
+}
+
+// book class implementing bookactions interface
+class book implements bookactions {
+   protected string title;
+   protected string author;
+
+   public book(string title, string author) {
+      this.title = title;
+      this.author = author;
+   }
+   
+   @override
+   public string read() {
+      // read functionality implementation
+   }
+   
+   @override
+   public string download() {
+      // download functionality implementation - not needed
+   }
+   
+   @override
+   public string bookmark() {
+      // bookmark functionality implementation
+   }
+}
+
+// ebook class extending book
+class ebook extends book {
+   public ebook(string title, string author) {
+      super(title, author);
+   }
+   
+   @override
+   public string read() {
+      // read functionality implementation
+   }
+   
+   @override
+   public string download() {
+      // download functionality implementation
+   }
+   
+   @override
+   public string bookmark() {
+      // bookmark functionality implementation
+   }
+}</code></pre>
+<p>
+  The
+  <code>BookActions</code>
+  interface encompasses multiple functionalities, including
+  <code>download()</code>, which is unnecessary for the
+  <code>Book</code>
+  class. Not all classes implementing an interface require all its methods. By adhering to the Interface Segregation Principle, interfaces can be broken down into smaller, more focused ones.
+</p>
+
+<pre><code class="language-java">// interface providing read functionality
+interface readable {
+   string read();
+}
+
+// interface providing download functionality
+interface downloadable {
+   string download();
+}
+
+// interface providing bookmark functionality
+interface bookmarkable {
+   string bookmark();
+}
+
+// book class implementing readable and bookmarkable
+class book implements readable, bookmarkable {
+   // implementations for read and bookmark methods
+}
+
+// ebook class implementing readable, downloadable, and bookmarkable
+class ebook extends book implements downloadable {
+   // implementations for read, download, and bookmark methods
+}</code></pre>
+<p>
+  By separating out functionalities into smaller interfaces, each class can implement only what it needs, thus adhering to the Interface Segregation Principle.
+</p>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+  <h2 class="post-title">Dependency Inversion Principle</h2>
+</div>
+
+<p>
+  The Dependency Inversion Principle states that one should depend upon abstractions, not concretions when referring to other classes. In other words, referencing classes through higher-level abstractions such as abstract classes or interfaces.
+</p>
+
+<pre><code class="language-java">list<string> mylist = new arraylist<>();
+ set<string> myset = new hashset<>();
+ map<int, string> mymap = new hashmap<>();</code></pre>
+
+<p>
+  The initial application of the Dependency Inversion Principle occurs when declaring collections like
+  <code>ArrayList</code>
+  or
+  <code>HashSet</code>. Instead of declaring them as
+  <code>ArrayList</code>
+  or
+  <code>HashSet</code>, declare them as the higher-level interfaces such as
+  <code>List</code>
+  or
+  <code>Set</code>. There are several reasons for making such declarations:
+</p>
+
+<pre><code class="language-java">// low-level module
+class child {
+   // implementation details
+}
+
+// high-level module
+class parents {
+   private child child;
+   
+   public parents(child child) {
+      // direct reference to child class
+      this.child = child;
+   }
+}</code></pre>
+
+<p>
+  The high-level
+  <code>Parents</code>
+  module references the low-level
+  <code>Child</code>
+  module directly, which represents a direct dependency.
+</p>
+
+<p>
+  What if we need to modify the
+  <code>Child</code>
+  class that the
+  <code>Parents</code>
+  class is referencing? Any changes to the
+  <code>Child</code>
+  class would affect all other entities connected to it. To mitigate this situation, we can refactor as follows:
+</p>
+
+<pre><code class="language-java">// common interface
+interface human {}
+
+class child implements human {
+   // implementation details
+}
+
+class newchild implements human {
+   // implementation details
+}
+
+// high-level module
+class parents {
+   private human child;
+   
+   public parents(human child) {
+      // reference to the interface human
+      this.child = child;
+   }
+}</code></pre>
+
+<p>
+  We introduced a common interface
+  <code>Human</code>
+  that both
+  <code>Child</code>
+  and
+  <code>NewChild</code>
+  implement. Now, the
+  <code>Parents</code>
+  class can receive either a
+  <code>Child</code>
+  or
+  <code>NewChild</code>
+  object through the
+  <code>Human</code>
+  interface. This simple adjustment allows flexibility in choosing between different implementations without affecting the high-level module.
+</p>
+
+<p>
+  In summary, the Dependency Inversion Principle suggests that when using a low-level module, avoid direct use and instead depend on the higher-level interface that the module implements. This approach increases flexibility and reduces coupling.
+</p>

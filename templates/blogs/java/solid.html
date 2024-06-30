@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>SeungHyeon Lee.io</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"/>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- CSS / Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/blog.css"/>
+    <!-- Font Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet"/>
+
+    <!-- Web Icons -->
+    <link rel="icon" href="/assets/img/raccoon-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/assets/img/raccoon-16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="https://getbootstrap.kr/docs/5.3/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="https://getbootstrap.kr/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/assets/img/raccoon.ico">
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+    <!-- 코드 구문 강조 호출 -->
+    <script>
+      hljs.highlightAll();
+    </script>
+    <style>
+    </style>
+
+  </head>
+
+  <body style="width: 100%;">
+    <div class="postings">
+      <main class="d-flex flex-nowrap">
+        <!-- 사이드바 -->
+        <div class="flex-shrink-0 p-3" style="width: 220px;" id="sidebar"></div>
+
+        <!-- 빈 공간 -->
+        <div class="b-example-divider b-example-vr" style="background-color: gray; z-index: 0; box-shadow: inset 0 0px 10px rgba(0, 1, 0, 1), 0 6px 6px rgba(0, 0.1, 0, 0.1);"></div>
+
+        <!-- 본문 부분 -->
+        <div class="posting">
+          <!-- 본문 상단부 -->
+          <div class="hstack gap-0">
+            <p class="p-2 m-0" style="font-size: 50px; font-weight:600;	margin-bottom: 0;">SOLID Principal<span style="font-size: 20px; vertical-align: text-bottom;"> </span></p>            
+            <div class="p-2 ms-auto">
+              <!-- 언어 선택 버튼 -->
+              <select class="form-select form-select-sm" aria-label="Small select example" onchange="languageChange()" id="lang">
+                <option value="KR">
+                  KR
+                </option>
+                <option value="EN">
+                  EN
+                </option>
+              </select>
+            </div>            
+          </div>
+          <div class="contents" style="display: none;"></div>
+        </div>
+      </main>
+    </div>
+    <!-- blog.js -->
+    <script src="/js/blog.js"></script>
+    <script type="text/javascript">
+      loadContents("solid.html");
+      window.addEventListener('load', function () {
+      })
+    </script>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <!-- JS / bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+  </body>
+
+</html>
