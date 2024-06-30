@@ -42,7 +42,7 @@
     <div class="pages">
       <!-- 인사 페이지 -->
       <div class="page" id="page-home" style="background-color: #2e2f31;">
-        <button type="button" class="navyBtn" onClick="location.href='/blog.html'">To blog >></button>
+        <button type="button" class="navyBtn" onclick="location.href='/blog.html'">To blog >></button>
       </div>
 
       <!-- 소개 -->
@@ -257,63 +257,87 @@
       <div class="page" id="page-project" style=" display: flex; flex-direction: column;">
 
         <div class="row row-cols-6 gx-0 gap-0">
-          <div class="col p-2" id="tproject">
-            <div class="card" onclick="location.href='https://github.com/seunghyeonlee9661/InorOut'">
-              <img src="/assets/img/inorout.png" class="card-img-top p-2" style="object-fit: contain; height: 10vh;">
-              <div class="card-body p-2">
-                <h5 class="card-title" style="font-size: 1.5vh;">In or Out</h5>
-                <p class="card-text tp-text">Point-in-Polygon Algorithm using Java GUI</p>
+
+          <div class="col p-2" id="tproject" style="height: auto;">
+            <div class="card shadow-sm" onclick="location.href='https://github.com/seunghyeonlee9661/InorOut'">
+              <img class="bd-placeholder-img card-img-top" src="/assets/img/inorout.png" style="object-fit: cover; width:100%; height: 15vh;"/>
+              <div class="card-body p-1" style="position:absolute; background:linear-gradient(to bottom, transparent, black); width:100%; bottom:0%; "
+              data-placement="bottom"
+              data-bs-html="true"
+              data-bs-title="<p class='m-0'>Point-in-Polygon Algorithm using Java GUI</p><hr class='m-0'><ul class='m-0'><li class='text-start'>Java/Algorithm</li><li class='text-start'>GUI Interface</li></ul>">
+                <div class="d-flex justify-content-between align-items-center">
+                  <a href="https://github.com/InnovationCampTeam/MusicShare" style="text-decoration-line: none;">
+                    <p class="card-text" style="color:white; font-weight:1000;">In or Out</p>
+                  </a>
+                </div>
               </div>
-              <div class="card-footer p-1">
-                <span class="badge text-bg-primary" style="font-size: 1.3vh;">Java</span>
+            </div>
+          </div>
+          <div class="col p-2" id="tproject" style="height: auto;">
+            <div class="card shadow-sm" onclick="location.href='https://github.com/seunghyeonlee9661/WaterSortAlgorithm'">
+              <img class="bd-placeholder-img card-img-top" src="https://github.com/LeeSeungHyun9661/WaterSortAlgorithm/assets/101535408/7c31888c-ae81-4cfb-8588-6572f0d5e6e7" style="object-fit: cover; width:100%; height: 15vh;"/>
+              <div class="card-body p-1" style="position:absolute; background:linear-gradient(to bottom, transparent, black); width:100%; bottom:0%; "
+              data-placement="bottom"
+              data-bs-html="true"
+              data-bs-title="<p class='m-0'>Water Sort Puzzle Solution</p><hr class='m-0'><ul class='m-0'><li class='text-start'>Java/Algorithm</li></ul>">
+                <div class="d-flex justify-content-between align-items-center">
+                  <a href="https://github.com/InnovationCampTeam/MusicShare" style="text-decoration-line: none;">
+                    <p class="card-text" style="color:white; font-weight:1000;">Water Sort Puzzle</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col p-2" id="tproject" style="height: auto;">
+            <div class="card shadow-sm" onclick="location.href='https://github.com/seunghyeonlee9661/JavaSortingAlgorithm'">
+              <img class="bd-placeholder-img card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Sorting_selection_sort_anim.gif" style="object-fit: cover; width:100%; height: 15vh;"/>
+              <div class="card-body p-1" style="position:absolute; background:linear-gradient(to bottom, transparent, black); width:100%; bottom:0%; "
+                  data-placement="bottom"
+                  data-bs-html="true"
+                  data-bs-title="<p class='m-0'>Sort Algorithms implementation</p><hr class='m-0'><ul class='m-0'><li class='text-start'>Java/Algorithm</li></ul>">
+                <div class="d-flex justify-content-between align-items-center">
+                  <a href="https://github.com/InnovationCampTeam/MusicShare" style="text-decoration-line: none;">
+                    <p class="card-text" style="color:white; font-weight:1000;">Sort Algorithms</p>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col p-2" id="tproject">
-            <div class="card" onclick="location.href='https://github.com/seunghyeonlee9661/WaterSortAlgorithm'">
-              <img src="https://github.com/LeeSeungHyun9661/WaterSortAlgorithm/assets/101535408/7c31888c-ae81-4cfb-8588-6572f0d5e6e7" class="card-img-top p-2" style="object-fit: contain; height: 10vh;">
-              <div class="card-body p-2">
-                <h5 class="card-title" style="font-size: 1.5vh;">Water Sort Puzzle</h5>
-                <p class="card-text tp-text">Water Sort Puzzle Solution with java</p>
-              </div>
-              <div class="card-footer p-1">
-                <span class="badge text-bg-primary" style="font-size: 1.3vh;">Java</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col p-2" id="tproject">
-            <div class="card" onclick="location.href='https://github.com/seunghyeonlee9661/JavaSortingAlgorithm'">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Sorting_selection_sort_anim.gif" class="card-img-top p-2" style="object-fit: contain; height: 10vh;">
-              <div class="card-body p-2">
-                <h5 class="card-title" style="font-size: 1.5vh;">Sort Algorithms</h5>
-                <p class="card-text tp-text">Sort Algorithms implementation with java</p>
-              </div>
-              <div class="card-footer p-1">
-                <span class="badge text-bg-primary" style="font-size: 1.3vh;">Java</span>
+          <div class="col p-2" id="tproject" style="height: auto;">
+            <div class="card shadow-sm" onclick="location.href='https://github.com/InnovationCampTeam/MusicShare'" >
+              <img class="bd-placeholder-img card-img-top" src="/assets/img/musicshare.png" style="object-fit: cover; width:100%; height: 15vh;"/>
+              <div class="card-body p-1" style="position:absolute; background:linear-gradient(to bottom, transparent, black); width:100%; bottom:0%;"  
+                  data-placement="bottom"
+                  data-bs-html="true"
+                  data-bs-title="<p class='m-0'>Simple web develop project</p><hr class='m-0'><ul class='m-0'><li class='text-start'>HTML/Javascript</li><li class='text-start'>Python-Flask</li></ul>">
+                <div class="d-flex justify-content-between align-items-center">
+                  <a href="https://github.com/InnovationCampTeam/MusicShare" style="text-decoration-line: none;">
+                    <p class="card-text" style="color:white; font-weight:1000;">Music Share</p>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col p-2" id="tproject">
-            <div class="card" onclick="location.href='https://github.com/InnovationCampTeam/MusicShare'">
-              <img src="/assets/img/musicshare.png" class="card-img-top p-2" style="object-fit: contain; height: 10vh;">
-              <div class="card-body p-2">
-                <h5 class="card-title" style="font-size: 1.5vh;">Music Share</h5>
-                <p class="card-text tp-text">Simple web develop project for flaks</p>
-              </div>
-              <div class="card-footer p-1">
-                <span class="badge text-bg-primary" style="font-size: 1.3vh;">flask</span>
-                <span class="badge text-bg-primary" style="font-size: 1.3vh;">python</span>
+          <div class="col p-2" id="tproject" style="height: auto;">
+            <div class="card shadow-sm" onclick="location.href='https://github.com/seunghyeonlee9661/BlockFitAlgorithm'">
+              <img class="bd-placeholder-img card-img-top" src="/assets/img/blockfit.png" style="object-fit: cover; width:100%; height: 15vh;"/>
+              <div class="card-body p-1" style="position:absolute; background:linear-gradient(to bottom, transparent, black); width:100%; bottom:0%; " 
+              data-placement="bottom"
+              data-bs-html="true"
+              data-bs-title="<p class='m-0'>Block Fitting puzzle Algorithm</p><hr class='m-0'><ul class='m-0'><li class='text-start'>Java/Algorithm</li></ul>">
+                <div class="d-flex justify-content-between align-items-center">
+                  <a href="https://github.com/InnovationCampTeam/MusicShare" style="text-decoration-line: none;">
+                    <p class="card-text" style="color:white; font-weight:1000;">Block Fitting Puzzle</p>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>         
-
-        </div>       
-      </div>   
+          </div>
+        </div>
+      </div>
     </div>
-    
     <!-- 사이드 페이지네이션 -->
     <ul class="pagination"></ul>
 

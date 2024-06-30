@@ -9,6 +9,12 @@ window.addEventListener('load', function () {
    html.style.overflow = 'auto'; //스크롤 방지 해제
    mask.style.display = 'none';
   }, 500);
+
+
+})
+
+$(function () {
+   $('.card-body').tooltip()
 })
 
 
