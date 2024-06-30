@@ -1,0 +1,315 @@
+<!-- Basic Syntax -->
+<div class="hstack gap-0" style="background-color: #dee2e6;">
+  <div class="p-2 ms-auto" style="font-size: 15px;">
+    <strong>Edit Date</strong>: June 2024
+  </div>
+</div>
+
+<!-- Methods -->
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+  <h2 class="post-title">Methods</h2>
+</div>
+<p>A method is a block of code that performs a specific function. Methods are defined and used for parts of the code that need to be executed repeatedly or handled separately. A method consists of the following components:</p>
+
+<pre class="line-numbers"><code class="language-java">ReturnType methodName(Parameters) {
+      // Method body
+}</code></pre>
+<table class="table" cellspacing="0" style="font-size: 13px;">
+  <tbody>
+    <tr>
+      <td>
+        <strong>Return Type</strong>
+      </td>
+      <td>Specifies the data type of the value that the method returns. If there is no return value, <code>void</code> is used.</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Method Name</strong>
+      </td>
+      <td>Defines the name of the method. It usually starts with a lowercase letter and uses a verb form.</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Parameters</strong>
+      </td>
+      <td>Defines the values that the method will accept. Each parameter consists of a data type and a variable name.</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Method Body</strong>
+      </td>
+      <td>A block of code that defines the operations the method will perform.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Here is an example of defining a method in Java:</p>
+<pre class="line-numbers"><code class="language-java">public class MyClass {
+  // Instance method
+  public void instanceMethod() {
+      System.out.println("This is an instance method.");
+  }
+
+  // Static method
+  public static void staticMethod() {
+      System.out.println("This is a static method.");
+  }
+}</code></pre>
+<p>Methods can be made static by adding the <code>static</code> keyword. Instance methods belong to an instance of an object and require object creation to be used. On the other hand, static methods belong to the class and are stored in the Method area, allowing them to be used without creating an object.</p>
+
+<!-- Arrays -->
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+  <h2 class="post-title">Arrays</h2>
+</div>
+<p>An array is a data structure that allows you to manage multiple values of the same type under a single variable. Arrays are stored contiguously in memory, providing fast access and allowing each element to be accessed via an index.</p>
+<table class="table" cellspacing="0" style="font-size: 13px;">
+  <tbody>
+    <tr>
+      <td>
+        <strong>Array Declaration</strong>
+        <p>To declare an array, specify the type and name of the array. The following is an example of how to declare an array:</p>
+        <pre class="line-numbers"><code class="language-java">int[] numbers;
+String[] names;</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Array Creation</strong>
+        <p>To create an array, use the <code>new</code> operator and specify the size of the array. This creates an empty array of a specific length.</p>
+        <pre class="line-numbers"><code class="language-java">numbers = new int[5];
+names = new String[10];</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Array Initialization</strong>
+        <p>You can initialize an array while declaring and creating it simultaneously. If you do not specify the length, the length of the array is set to the number of initial values.</p>
+        <pre class="line-numbers"><code class="language-java">int[] numbers = {1, 2, 3, 4, 5};
+String[] names = {"Alice", "Bob", "Charlie", "David", "Eve"};</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Array Length</strong>
+        <p>The length of an array can be obtained using the <code>length</code> property:</p>
+        <pre class="line-numbers"><code class="language-java">int length = numbers.length;</code></pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Let's look at a simple example that shows the declaration, creation, initialization, and element access of a Java array.</p>
+<pre class="line-numbers"><code class="language-java">public class ArrayExample {
+  public static void main(String[] args) {
+      // Declare and create an integer array
+      int[] numbers = new int[5];
+
+      // Initialize the array
+      numbers[0] = 10;
+      numbers[1] = 20;
+      numbers[2] = 30;
+      numbers[3] = 40;
+      numbers[4] = 50;
+
+      // Access array elements
+      for (int i = 0; i < numbers.length; i++) {
+          System.out.println("Element at index " + i + ": " + numbers[i]);
+      }
+      /*
+       * 0: 10
+       * 1: 20
+       * 2: 30
+       * 3: 40
+       * 4: 50
+      */
+
+      // Declare and initialize a string array
+      String[] names = {"Alice", "Bob", "Charlie"};
+
+      // Access array elements
+      for (int i = 0; i < names.length; i++) {
+          System.out.println("Name at index " + i + ": " + names[i]);
+      }
+      /*
+       * 0: Alice
+       * 1: Bob
+       * 2: Charlie
+      */
+  }
+}</code></pre>
+
+<h4 style="font-weight: bold;">Fixed Length of Arrays</h4>
+<p>The size of an array is determined at creation and cannot be changed later. If you try to access elements beyond the array's size, an <code>ArrayIndexOutOfBoundsException</code> error will be thrown. Therefore, to increase the size of an array, you can declare a larger array and copy the values into it.</p>
+<pre class="line-numbers"><code class="language-java">// Function to declare a larger array when the index is out of bounds
+public static int[] addElement(int[] array, int index, int value) {
+  
+  if (index >= array.length) { // If the index is out of bounds
+    // Create a new array (current array size + 1)
+    int[] newArray = new int[array.length + 1];
+
+    // Copy the contents of the existing array to the new array
+    System.arraycopy(array, 0, newArray, 0, array.length);  
+
+    // Add the value to the last index of the new array
+    newArray[newArray.length - 1] = value;
+
+    return newArray;
+  } else { // If the index is within bounds
+
+    // Store the value at the index
+    array[index] = value;
+
+    return array;
+  }
+}</code></pre>
+
+<!-- Arrays -->
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+   <h2 class="post-title">Deep Copy / Shallow Copy</h2>
+ </div>
+ <p>Let's take a look at some simple code.</p>
+ <pre class="line-numbers"><code class="language-java">public class Main { 
+ 
+   static int snum = 10;
+ 
+   public static void main(String[] args) {
+       int num = 1; // Primitive type variable
+       int[] arr = { 1 }; // Reference type variable
+ 
+       f1(num); 
+       f2(arr);
+ 
+       System.out.println("num :" + num);
+       System.out.println("arr[0] :" + arr[0]);
+   }
+ 
+   static void f1(int num) {
+       num += 1;
+   }
+ 
+   static void f2(int[] arr) {
+       arr[0] += 1;
+   }
+ }</code></pre>
+ <p>What results will appear?
+   In the case of <code>num</code>, the value is called by the <code>f1()</code> method. Even though 1 was added, the output value does not change. However, in the case of the array, 2 is printed.
+   The value is changed by the <code>f2()</code> method. This difference is due to the different storage spaces used by primitive and reference type variables. Let's learn about the differences between <strong>deep copy</strong> and
+   <strong>shallow copy</strong>.
+ </p>
+ <p>When the written code is executed, variables are stored in different areas of the Java Virtual Machine (JVM) memory space, categorized into three main areas:</p>
+ <table class="table" cellspacing="0" style="font-size: 13px;">
+   <tbody>
+     <tr>
+       <td>
+         <strong>Method (Static) Area</strong>
+       </td>
+       <td>Stores classes, class variables (static variables), and methods.</td>
+     </tr>
+     <tr>
+       <td>
+         <strong>Stack Area</strong>
+       </td>
+       <td>Stores primitive type variables. Local variables and parameters are stored here.</td>
+     </tr>
+     <tr>
+       <td>
+         <strong>Heap Area</strong>
+       </td>
+       <td>Stores reference type variables. Objects (instances) and arrays are stored here.</td>
+     </tr>
+   </tbody>
+ </table>
+ 
+ <p>Let's examine the flow of the code and where each element is stored.</p>
+<div class="row">
+  <img class="col-6" src="/assets/img/copy_1.png">
+  <img class="col-6" src="/assets/img/ex1.png">
+</div>
+<p>When the following code is executed, each class, static variable, and method is first stored in the Method area.</p>
+
+<div class="row">
+  <img class="col-6" src="/assets/img/copy_2.png">
+  <img class="col-6" src="/assets/img/ex2.png">
+</div>
+<p>When the main method is executed, values are stored in the stack area. The important point here is reference type variables. A primitive type variable like <code>int</code> stores the value itself. However, a reference type variable like <code>int[]</code> (array) stores the address value. The values inside the array are stored in the Heap area, and the address points to that location.</p>
+
+<div class="row">
+  <img class="col-6" src="/assets/img/copy_3.png">
+  <img class="col-6" src="/assets/img/ex3.png">
+</div>
+<p>First, when the <code>f1()</code> function is executed, a new stack frame is created in the Stack area. The parameter <code>num</code> corresponds to a different location. It only brings the value. Therefore, even if the value inside the stack frame changes, it disappears when the method ends, and the <code>num</code> in the main method is not affected at all.</p>
+
+<div class="row">
+  <img class="col-6" src="/assets/img/copy_4.png">
+  <img class="col-6" src="/assets/img/ex4.png">
+</div>
+<p>On the other hand, in the case of <code>f2()</code>, the <code>arr</code> value created in the stack frame takes the same address value. It still points to the Heap area where the array values are stored. Therefore, variables pointing to the same address value affect each other. The value of <code>arr</code> is affected by changes.</p>
+
+<pre class="line-numbers"><code class="language-java">import java.util.Arrays;
+
+public class Main {     
+    public static void main(String[] args) {
+
+        int num1 = 1;
+        int num2 = num1;
+        num1 += 1;
+        System.out.println("num1 :" + num1 + " / num2:" + num2);
+
+        int[] arr1 = { 1, 2, 3, 4 };
+        int[] arr2 = arr1;
+
+        arr1[0] = 7;
+        arr2[3] = 9;
+
+        System.out.println("arr1 :" + Arrays.toString(arr1));
+        System.out.println("arr2 :" + Arrays.toString(arr2));
+    }
+}</code></pre>
+
+<p>Can you predict the results of the following code? The primitive type variable <code>num1</code> is initialized to 1. <code>num2</code> is also declared and it copies the value of <code>num1</code>. Since the two values are stored in separate locations, changing one value does not affect the other.</p>
+<p>However, the reference type variable <code>arr1</code> holds an address value and points to an array. The declaration of <code>arr2</code> and the copying of <code>arr1</code> copies the address value, not the array's contents. Therefore, changes to the values of <code>arr1</code> and <code>arr2</code> affect the original data that both address values point to. This concept is called <strong>Shallow Copy</strong>.</p>
+<p>So, is it impossible to clone an array? No, it is possible to create an array with the same content that does not affect each other by declaring the array with individual address values and copying each element. This method, called <strong>Deep Copy</strong>, can be implemented as follows:</p>
+
+<table class="table" cellspacing="0" style="font-size: 13px;">
+  <tbody>
+    <tr>
+      <td>
+        <strong><code>for</code> Loop Element Copy</strong>
+        <p>The simplest method is to create an array of the same length and copy the array elements using a <code>for</code> loop.</p>
+        <pre class="line-numbers"><code class="language-java">int[] arr1 = { 1, 2, 3, 4 };
+int[] arr2 = new int[4];
+
+for (int i = 0; i < arr1.length; i++) {
+    arr2[i] = arr1[i];
+}</code></pre>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <code>clone()</code>
+        <p>You can clone an array quickly and simply without special parameters.</p>
+        <pre class="line-numbers"><code class="language-java">int[] arr1 = { 1, 2, 3, 4 };
+int[] arr2 = arr1.clone();</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>Arrays.copyOf()</code>
+        <p>You can clone a specific length of the target array.</p>
+        <pre class="line-numbers"><code class="language-java">int[] arr1 = { 1, 2, 3, 4 }; 
+int[] arr2 = Arrays.copyOf(arr1, arr1.length);</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>System.arraycopy()</code>
+        <p>This command allows detailed control over the portion of the array to be copied.</p>
+        <pre class="line-numbers"><code class="language-java">int[] arr1 = { 1, 2, 3, 4 };
+int[] arr2 = new int[4];
+// (source array, source start, destination array, destination start, copy length)
+System.arraycopy(arr1, 0, arr2, 0, arr1.length);</code></pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
